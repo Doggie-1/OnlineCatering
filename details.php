@@ -72,16 +72,23 @@ javascript:window.history.forward(1);
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label">Occasion</label>
                                   <div class="col-lg-5">
-                                    <select class="form-control select2 " id="exampleSelect1" name="ocassion" placeholder="Select occasion" required>
-                                      <option>Baptism</option>
-                                      <option>Birthday</option>
-                                      <option>Christmas Party</option>
-                                      <option>Funeral</option>
-                                      <option>Wedding</option>
-                                      <option>Others</option>
+                                    <select class="form-control select2 " id="exampleSelect1" name="ocassion" placeholder="Select occasion" required
+                                        onchange="show();">
+                                      <option value="Baptism">Baptism</option>
+                                      <option value="Birthday">Birthday</option>
+                                      <option value="Christmas Party">Christmas Party</option>
+                                      <option value="Funeral">Funeral</option>
+                                      <option value="Wedding">Wedding</option>
+                                      <option value="Others">Others</option>
                                     </select>
                                   </div>
-                                </div>  
+                                </div>
+                                <div class="form-group" id="others">
+                                  <label class="col-lg-2 control-label"></label>
+                                  <div class="col-lg-5">
+                                    <input type="text" class="form-control" placeholder="Please specify" min="1" name="others">
+                                  </div>
+                                </div>
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label">No. of Pax</label>
                                   <div class="col-lg-5">
@@ -181,7 +188,17 @@ include('includes/dbcon.php');
   $(function () {
   //Initialize Select2 Elements
     $(".select2").select2();
+    document.getElementById('others').style.display = 'none';
   })
+  function show() {
+    var e = document.getElementById("exampleSelect1");
+    var value = e.value;
+        if (value === "Others") {
+            document.getElementById('others').style.display = 'block';
+        } else {
+            document.getElementById('others').style.display = 'none';
+        }
+  }
 $( "#datepicker" ).datepicker({ minDate: 0});
 
 
