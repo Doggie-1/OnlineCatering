@@ -9,7 +9,7 @@ include('includes/dbcon.php');
 	$motif = $_POST['motif'];
 	$pax = $_POST['pax'];
 	$type = $_POST['type'];
-	$ocassion = $_POST['ocassion'];
+	$ocassion = $_POST['ocassion'] === "Others" ? $_POST['others'] : $_POST['ocassion'];
 	$cid = $_POST['combo_id'];
 	$date=date("Y-m-d",strtotime($date));
 
