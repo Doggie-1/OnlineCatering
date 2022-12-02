@@ -104,74 +104,86 @@ javascript:window.history.forward(1);
                                <div class="form-group">
     <label class="col-lg-2 control-label"></label>
         <div class="col-lg-5">
-<?php
-include('includes/dbcon.php');
+            <?php
+            include('includes/dbcon.php');
+                $query=mysqli_query($con,"select * from combo order by combo_name")or die(mysqli_error($con));
+                $count=mysqli_num_rows($query);
+                while ($row=mysqli_fetch_array($query)){
+                    $id=$row['combo_id'];
+                    $name=$row['combo_name'];
+                    $price=$row['combo_price'];
+            ?>
+                <div class="col-md-6">
+                    <div class="widget">
+                        <!-- Widget title -->
+                        <div class="widget-head">
+                            <div class="pull-left"><?php echo $name;?> - P<?php echo $price;?></div>
+                            <div class="widget-icons pull-right"></div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="widget-content referrer">
+                            <!-- Widget content -->
+                            <table class="table table-striped table-bordered table-hover">
+                                <tbody>
+                                    <?php
 
-    $query=mysqli_query($con,"select * from combo order by combo_name")or die(mysqli_error($con));
-      $count=mysqli_num_rows($query);
-      while ($row=mysqli_fetch_array($query)){
-        $id=$row['combo_id'];
-        $name=$row['combo_name'];
-        $price=$row['combo_price'];
+                                        $query1=mysqli_query($con,"select * from combo_details natural join menu where combo_id='$id'")or die(mysqli_error($con));
+                                            while ($row1=mysqli_fetch_array($query1)){
+                                                $cid=$row1['combo_details_id'];
+                                                $menu_id=$row1['menu_id'];
+                                                $menu_name=$row1['menu_name'];
+                                                $menu_price=$row1['menu_price'];
 
-       
-?>     
+                                    ?>
+                                        <tr>
+                                                <td onClick="addMenu(this);" data-id="<?php echo $menu_name;?>" value="<?php echo $menu_price;?>"><?php echo $menu_name;?></td>
+                                        </tr>
 
+                                    <?php }?>
+                                </tbody>
+                            </table>
 
-          <div class="col-md-6">
-              <div class="widget">
-                <!-- Widget title -->
-                <div class="widget-head">
-                  <div class="pull-left"><?php echo $name;?> - P<?php echo $price;?></div>
-                  <div class="widget-icons pull-right">
-                  </div>  
-                  <div class="clearfix"></div>
+                            <div class="widget-foot text-center">
+                                <input type="radio" id="inlineCheckbox1" value="<?php echo $id;?>" name="combo_id">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="widget-content referrer">
-                  <!-- Widget content -->
-                  
-                  <table class="table table-striped table-bordered table-hover">
-                    <tbody>
-
-<?php
-
-    $query1=mysqli_query($con,"select * from combo_details natural join menu where combo_id='$id'")or die(mysqli_error($con));
-      while ($row1=mysqli_fetch_array($query1)){
-        $cid=$row1['combo_details_id'];
-        $menu_id=$row1['menu_id'];
-        $menu_name=$row1['menu_name'];
-        
-?>                        
-                    <tr>
-                      <td><?php echo $menu_name;?></td>
-                    </tr> 
-                   
-                
-<?php }?>                    
-                    
-                  </tbody></table>
-
-                  <div class="widget-foot text-center">
-                    <input type="radio" id="inlineCheckbox1" value="<?php echo $id;?>" name="combo_id">
-                  </div>
+            <!--end widget-->
+            <?php }?>
+        </div>
+            <div class="col-md-4">
+                <div class="widget">
+                    <!-- Widget title -->
+                    <div class="widget-head">
+                        <div class="pull-left">Custom - P 0</div>
+                        <div class="widget-icons pull-right"></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="widget-content referrer">
+                        <!-- Widget content -->
+                        <table class="table table-striped table-bordered table-hover">
+                            <tbody>
+                                <tr id="myList" style="background-color: white;">
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-              </div>
-
+                <div>
+                    <div style="font-weight: 700; font-size: 15px;">Total: <span id="total"></span></div>
+                </div>
             </div>
-              <!--end widget-->
-            <?php }?>  
-         </div>
-      </div> 
-                                <div class="form-group">
-                                  <div class="col-lg-offset-2 col-lg-6">
-                                    <button type="reset" class="btn btn-sm btn-default">Clear</button>
-                                    <button type="submit" class="btn btn-sm btn-primary">Next</button>
-                                    
-                                  </div>
-                                </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-6">
+                <button type="reset" class="btn btn-sm btn-default">Clear</button>
+                <button type="submit" class="btn btn-sm btn-primary">Next</button>
+            </div>
+        </div>
                               </form>
-                  </div>
-                </div>
+        </div>
+    </div>
       
                   <div class="widget-foot">
                     <!-- Footer goes here -->
@@ -185,20 +197,53 @@ include('includes/dbcon.php');
 <?php include 'footer.php';?> 	
 <?php include 'script.php';?>
 <script>
-  $(function () {
-  //Initialize Select2 Elements
-    $(".select2").select2();
-    document.getElementById('others').style.display = 'none';
-  })
-  function show() {
-    var e = document.getElementById("exampleSelect1");
-    var value = e.value;
-        if (value === "Others") {
-            document.getElementById('others').style.display = 'block';
+    $(function () {
+        //Initialize Select2 Elements
+        $(".select2").select2();
+        document.getElementById('others').style.display = 'none';
+    })
+    let myList = [];
+    let prices = [];
+    let total = 0;
+    function show() {
+        var e = document.getElementById("exampleSelect1");
+        var value = e.value;
+            if (value === "Others") {
+                document.getElementById('others').style.display = 'block';
+            } else {
+                document.getElementById('others').style.display = 'none';
+            }
+    }
+    let addMenu = element => {
+        if (!myList.includes(element.getAttribute('data-id'))) {
+            total = 0;
+            myList.push(element.getAttribute('data-id'));
+            prices.push(element.getAttribute('value'));
+            let list = document.getElementById("myList");
+            let priceList = document.getElementById("priceList");
+            let li = document.createElement("li");
+            li.setAttribute('id', element.getAttribute('data-id'));
+            li.innerText = element.getAttribute('value') + " - ";
+            li.appendChild(document.createTextNode(element.getAttribute('data-id')));
+            list.appendChild(li);
         } else {
-            document.getElementById('others').style.display = 'none';
+            total = 0;
+            temp = [];
+            tempPrice = [];
+            let priceKey;
+            let list = document.getElementById("myList");
+            myList.map((viand, key) => {element.getAttribute('data-id') !== viand ? temp.push(viand) : priceKey = key});
+            prices.map((viand, key) => priceKey !== key ? tempPrice.push(viand) : null);
+            myList = temp;
+            prices = tempPrice;
+            let item = document.getElementById(element.getAttribute('data-id'));
+            list.removeChild(item);
         }
-  }
+        prices.map((viand, key) => {total = total + parseInt(viand)});
+        let totalPrice = document.getElementById("total");
+        totalPrice.innerText = "P " + total;
+    }
+
 $( "#datepicker" ).datepicker({ minDate: 0});
 
 
