@@ -72,13 +72,18 @@ $query = mysqli_query($con, "SELECT * FROM reservation natural join combo WHERE 
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label">Mode of Payment</label>
                                   <div class="col-lg-5">
-                                    <select class="form-control select2 " id="exampleSelect1" name="mode" placeholder="Select occasion" required>
-                                      <option>Bank to Bank</option>
-                                      <option>Pera Padala</option>
-                                      <option>Cash</option>
+                                    <select class="form-control select2 " id="exampleSelect1" name="mode" placeholder="Select occasion" required onchange="show();">
+                                      <option value="Bank to Bank">Bank to Bank</option>
+                                      <option value="Pera Padala">Pera Padala</option>
+                                      <option value="Cash">Cash</option>
                                     </select>
                                   </div>
-                                </div>  
+                                  <div style="display: flex; justify-content: center; flex-direction: column; height: 27px;">
+                                      <img id="gcash" src="https://mb.com.ph/wp-content/uploads/2022/05/83408.png" width="30" height="30"/>
+                                      <img id="visa" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" width="30" height="10"/>
+                                      <img id="cash" src="https://icons.veryicon.com/png/o/business/coin-series/cash-payment.png" width="30" height="30" />
+                                  </div>
+                                </div>
                   
                                 <div class="form-group">
                                   <div class="col-lg-offset-2 col-lg-6">
@@ -105,7 +110,27 @@ $query = mysqli_query($con, "SELECT * FROM reservation natural join combo WHERE 
   $(function () {
   //Initialize Select2 Elements
     $(".select2").select2();
+    document.getElementById('gcash').style.display = 'none';
+    document.getElementById('visa').style.display = 'block';
+    document.getElementById('cash').style.display = 'none';
   })
+  function show() {
+      var e = document.getElementById("exampleSelect1");
+      var value = e.value;
+          if (value === "Bank to Bank") {
+              document.getElementById('gcash').style.display = 'none';
+              document.getElementById('visa').style.display = 'block';
+              document.getElementById('cash').style.display = 'none';
+          } else if (value === "Pera Padala") {
+              document.getElementById('gcash').style.display = 'block';
+              document.getElementById('visa').style.display = 'none';
+              document.getElementById('cash').style.display = 'none';
+          } else {
+              document.getElementById('gcash').style.display = 'none';
+              document.getElementById('visa').style.display = 'none';
+              document.getElementById('cash').style.display = 'block';
+          }
+    }
 $( "#datepicker" ).datepicker({ minDate: 0});
 
 
