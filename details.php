@@ -34,10 +34,11 @@ javascript:window.history.forward(1);
                     <!-- Form starts.  -->
                      <form class="form-horizontal" role="form" action="details_save.php" method="post">
                                 <div class="form-group">
-                                  <label class="col-lg-2 control-label">Venue</label>
-                                  <div class="col-lg-5">
-                                    <textarea class="form-control" name="venue" rows="5" placeholder="Complete Address of venue" required></textarea>
-                                  </div>
+                                    <label class="col-lg-2 control-label">Venue</label>
+                                    <div class="col-lg-5">
+                                    <textarea class="form-control" id="venue" name="venue" rows="5" placeholder="Complete Address of venue" required
+                                        onfocusout="checkLocation()"></textarea>
+                                    </div>
                                 </div>    
 
                                 <div class="form-group">
@@ -205,6 +206,13 @@ javascript:window.history.forward(1);
     let myList = [];
     let prices = [];
     let total = 0;
+    function checkLocation() {
+        let x = document.getElementById("venue");
+        let temp = x.value.toLowerCase();
+        if (!(temp.includes("cagayan de oro city") || temp.includes("cdo") || temp.includes("cdoc"))){
+            alert("Location is not within Cagayan de Oro.");
+        };
+    }
     function show() {
         var e = document.getElementById("exampleSelect1");
         var value = e.value;
