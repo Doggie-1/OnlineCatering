@@ -137,7 +137,7 @@ javascript:window.history.forward(1);
 
                                     ?>
                                         <tr>
-                                                <td onClick="addMenu(this);" data-id="<?php echo $menu_name;?>" value="<?php echo $menu_price;?>"><?php echo $menu_name;?></td>
+                                                <td onClick="addMenu(this);" data-code="<?php echo $menu_id;?>" data-id="<?php echo $menu_name;?>" value="<?php echo $menu_price;?>"><?php echo $menu_name;?></td>
                                         </tr>
 
                                     <?php }?>
@@ -172,7 +172,9 @@ javascript:window.history.forward(1);
                     </div>
                 </div>
                 <div>
-                    <div style="font-weight: 700; font-size: 15px;">Total: <span id="total"></span></div>
+                    <div style="font-weight: 700; font-size: 15px;">Total: <span id="total" name="total"></span></div>
+                    <input type="hidden" id="totalPrice" value="0" name="totalPrice">
+                    <input type="hidden" id="customMenu" value="0" name="customMenu">
                 </div>
             </div>
         </div>
@@ -205,6 +207,7 @@ javascript:window.history.forward(1);
     })
     let myList = [];
     let prices = [];
+    let menuId = "";
     let total = 0;
     function checkLocation() {
         let x = document.getElementById("venue");
@@ -234,10 +237,16 @@ javascript:window.history.forward(1);
             li.innerText = element.getAttribute('value') + " - ";
             li.appendChild(document.createTextNode(element.getAttribute('data-id')));
             list.appendChild(li);
+            if (!menuId) {
+                menuId += element.getAttribute('data-code');
+            } else {
+                menuId += "," + element.getAttribute('data-code');
+            }
         } else {
             total = 0;
             temp = [];
             tempPrice = [];
+            tempMenu = "";
             let priceKey;
             let list = document.getElementById("myList");
             myList.map((viand, key) => {element.getAttribute('data-id') !== viand ? temp.push(viand) : priceKey = key});
@@ -246,10 +255,19 @@ javascript:window.history.forward(1);
             prices = tempPrice;
             let item = document.getElementById(element.getAttribute('data-id'));
             list.removeChild(item);
+            let menus = menuId.split(",");
+            menus.map((viand, key) => {element.getAttribute('data-code') !== viand ?
+                !tempMenu ? tempMenu += viand : tempMenu += "," + viand
+            : null})
+            menuId = tempMenu;
         }
         prices.map((viand, key) => {total = total + parseInt(viand)});
         let totalPrice = document.getElementById("total");
+        let totalPrices = document.getElementById("totalPrice");
+        let customMenu = document.getElementById("customMenu");
         totalPrice.innerText = "P " + total;
+        totalPrices.value = total;
+        customMenu.value = menuId;
     }
 
 $( "#datepicker" ).datepicker({ minDate: 0});
