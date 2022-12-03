@@ -13,26 +13,24 @@ include('includes/dbcon.php');
 	$cid = $_POST['combo_id'];
 	$date=date("Y-m-d",strtotime($date));
 
-	$query = mysqli_query($con, "SELECT * FROM `reservation` WHERE r_date='".$date."' AND r_status = 'Approved'");
-			if(mysqli_num_rows($query) > 0)
-			{
+	$query = mysqli_query($con, "SELECT * FROM `reservation` WHERE r_time='".$time."' WHERE r_date='".$date."' AND r_status = 'Approved'");
 
-					echo "<script>alert ('Date is already reserved');
-					window.history.back(); </script>";
-			}
-			else{
-		$query = mysqli_query($con, "SELECT * FROM combo WHERE combo_id='$cid'");
-			$row=mysqli_fetch_array($query);
-				$price=$row['combo_price'];
-				$payable=$pax*$price;
+    if(mysqli_num_rows($query) > 0)
+    {
+        echo "<script>alert ('Date is already reserved');</script>";
+        echo "<script>document.location='details.php'</script>";
+    } else {
+        $query = mysqli_query($con, "SELECT * FROM combo WHERE combo_id='$cid'");
+        $row = mysqli_fetch_array($query);
+        $price = $row['combo_price'];
+        $payable = $pax*$price;
 
-		mysqli_query($con,"UPDATE reservation SET payable='$payable',balance='$payable',r_venue='$venue',r_date='$date',r_time='$time',r_motif='$motif'
-		,r_ocassion='$ocassion',r_type='$type',pax='$pax',combo_id='$cid',price='$price' where rid='$id'")or die(mysqli_error($con)); 
+        mysqli_query($con,"UPDATE reservation SET payable='$payable',balance='$payable',r_venue='$venue',r_date='$date',r_time='$time',r_motif='$motif'
+        ,r_ocassion='$ocassion',r_type='$type',pax='$pax',combo_id='$cid',price='$price' where rid='$id'")or die(mysqli_error($con));
 
-			$_SESSION['id']=$id;
+        $_SESSION['id']=$id;
 
-			
-			echo "<script>document.location='payment.php'</script>";   
-	}
+        echo "<script>document.location='payment.php'</script>";
+    }
 	
 ?>
