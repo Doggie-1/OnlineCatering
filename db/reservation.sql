@@ -353,6 +353,17 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
+-- Table structure for table `custom_details`
+--
+
+CREATE TABLE IF NOT EXISTS `custom_details` (
+   `id` int(11) NOT NULL AUTO_INCREMENT,
+   `reservation_id` int(11) NOT NULL,
+   `menu_id` int(11) NOT NULL,
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
 -- Dumping data for table `user`
 --
 
