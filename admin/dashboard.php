@@ -11,7 +11,24 @@ endif;
   <!-- Title and other stuffs -->
   <title>Dashboard - <?php include('../includes/title.php');?></title>
   <?php include('../includes/links.php');?>
-  
+  <style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    background-color: white;
+  }
+
+  tr:nth-child(even) {
+    background-color: gray;
+  }
+  </style>
 </head>
 
 <body>
@@ -103,35 +120,50 @@ include('../includes/dbcon.php');
       $row=mysqli_fetch_array($query);
         $count=$row['count'];
 ?> 
-                      <div class="col-md-4">
-                        <div class="alert alert-success">
-                          <i class="fa fa-check-circle-o pull-left" style="font-size:65px"></i><h2><?php echo $count;?></h2>
-                          <p>Finished</p>
-                        </div>
-                      </div>
+    <div class="col-md-4">
+        <div class="alert alert-success">
+            <i class="fa fa-check-circle-o pull-left" style="font-size:65px"></i><h2><?php echo $count;?></h2>
+            <p>Finished</p>
+        </div>
+    </div>
+    </div>  <!--row-->
+    <table>
+        <tr>
+            <th>Customer Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Status</th>
+            <th>Balance</th>
+            <th>Total</th>
+            <th>Code</th>
+            <th>Package</th>
+        </tr>
+        <?php
+            $reservationQuery=mysqli_query($con,"select * from reservation")or die(mysqli_error($con));
+            while($reservationRow=mysqli_fetch_array($reservationQuery)){
+            $cid=$reservationRow['combo_id'];
 
-                    
-          </div>  <!--row-->
-          
-<?php
-    $query=mysqli_query($con,"select * from reservation where r_status='Approved' and r_date>='$today' order by r_date")or die(mysqli_error($con));
-      while($row=mysqli_fetch_array($query)){
-        $name=$row['r_last'].", ".$row['r_first'];
-        $date=$row['r_date'];
-?> 
+            if ($cid) {
+                $comboQuery = mysqli_query($con,"select * from combo where combo_id='$cid'")or die(mysqli_error($con));
+                $comboRow = mysqli_fetch_array($comboQuery);
+                $cname = $comboRow['combo_name'];
+            } else {
+                $cname = "Custom Package";
+            }
 
-                      <li>
-
-                        <div class="recent-content">
-                          <div class="recent-meta"><?php echo date("M d, Y",strtotime($date));?></div>
-                          <div><?php echo $name;?>
-                          </div>
-
-                          <div class="clearfix"></div>
-                        </div>
-                      </li>
-
-<?php }?>                                    
+        ?>
+            <tr>
+                <td><?php echo $reservationRow['r_first'] . "," . $reservationRow['r_last']?></td>
+                <td><?php echo $reservationRow['r_email']?></td>
+                <td><?php echo $reservationRow['r_address']?></td>
+                <td><?php echo $reservationRow['r_status']?></td>
+                <td><?php echo $reservationRow['balance']?></td>
+                <td><?php echo $reservationRow['payable']?></td>
+                <td><?php echo $reservationRow['r_code']?></td>
+                <td><?php echo $cname?></td>
+            </tr>
+        <?php }?>
+    </table>
 
 
                     </ul>
