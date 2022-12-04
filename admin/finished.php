@@ -134,16 +134,12 @@ include('../includes/dbcon.php');
                         <td><?php echo $venue;?></td>
                         <td><?php echo $balance;?></td>
                         <td>
-                              <a href="#update" class="btn btn-default" data-target="#update<?php echo $id;?>" data-toggle="modal">
-                                <i class="fa fa-money bgreen"></i>
-                              </a>
-                              <a href="#update" class="btn btn-success" data-target="#update<?php echo $id;?>" data-toggle="modal">
+                              <a href="reservation_view.php?id=<?php echo $id;?>" class="btn btn-success" data-toggle="modal">
                                 <i class="fa fa-eye"></i>
                               </a>
-                              <a href="#update" class="btn btn-info" data-target="#update<?php echo $id;?>" data-toggle="modal">
-                                <i class="fa fa-pencil"></i>
+                              <a href="#update" class="btn btn-danger" data-target="#update<?php echo $id;?>" data-toggle="modal">
+                                <i class="fa fa-trash-o"></i>
                               </a>
-                            
                         </td>
                       </tr>
 <!-- Modal -->
@@ -152,42 +148,24 @@ include('../includes/dbcon.php');
         <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h4 class="modal-title">Add Payment</h4>
+              <h4 class="modal-title">Are you sure to delete?</h4>
             </div>
-            <div class="modal-body" style="height:120px">
-              <!--start form-->
-              <form class="form-horizontal" method="post" action="payment_save.php" enctype='multipart/form-data'>
-                  <!-- Title -->
-                  <input type="hidden" name="id" value="<?php echo $id;?>">
-                  <!-- Title -->
-                  <div class="form-group">
-                      <label class="control-label col-lg-4" for="title">Payment</label>
-                      <div class="col-lg-8"> 
-                        <input type="text" class="form-control" name="amount" id="title" placeholder="Enter Amount">
-                      </div>
-                  </div> 
-                  <!-- Title -->
-                  <div class="form-group">
-                      <label class="control-label col-lg-4" for="title">Status</label>
-                      <div class="col-lg-8"> 
-                        <select class="form-control select2" id="exampleSelect1" name="status">
-                                <option>Approved</option>
-                                <option>Finished</option>
-                                <option>Cancelled</option>
-                        </select>
-                      </div>
-                  </div> 
-                  
-                              
-                  <!-- Buttons -->
-                  <div class="col-md-4">
-                  </div>  
-                  <div class="col-md-8">
-                        <button type="submit" class="btn btn-sm btn-primary" name="update">Update</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
-                  </div>  
-              </form>
-              <!--end form-->
+            <div class="modal-body" style="height:70px;">
+                <!--start form-->
+                <form class="form-horizontal" method="post" action="entry_save.php" enctype='multipart/form-data'>
+                    <!-- Title -->
+                    <input type="hidden" name="id" value="<?php echo $id;?>">
+                    <input type="hidden" name="state" value="finished">
+                    <!-- Title -->
+                    <!-- Buttons -->
+                    <div style="display: flex; justify-content: center;">
+                        <div>
+                            <button type="submit" class="btn btn-danger btn-lg" name="update">Confirm</button>
+                            <button type="button" class="btn btn-default btn-lg" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+                <!--end form-->
             </div>
            
         </div><!--modal content-->
