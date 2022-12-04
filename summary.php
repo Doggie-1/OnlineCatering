@@ -40,24 +40,30 @@ endif;
 <?php
 include('includes/dbcon.php');
     $id=$_SESSION['id'];
-    $query=mysqli_query($con,"select * from reservation natural join combo where rid='$id'")or die(mysqli_error($con));
-      $row=mysqli_fetch_array($query);
-        $rcode=$row['r_code'];
-        $first=$row['r_first'];
-        $last=$row['r_last'];
-        $contact=$row['r_contact'];
-        $address=$row['r_address'];
-        $date=$row['r_date'];
-        $venue=$row['r_venue'];
-        $balance=$row['balance'];
-        $payable=$row['payable'];
-        $ocassion=$row['r_ocassion'];
-        $status=$row['r_status'];
-        $motif=$row['r_motif'];
-        $time=$row['r_time'];
-        $time=$row['r_time'];
-        $type=$row['r_type'];
-        $cid=$row['combo_id'];
+    $query=mysqli_query($con,"select * from reservation where rid='$id'")or die(mysqli_error($con));
+    $row=mysqli_fetch_array($query);
+    $rcode=$row['r_code'];
+    $first=$row['r_first'];
+    $last=$row['r_last'];
+    $contact=$row['r_contact'];
+    $address=$row['r_address'];
+    $date=$row['r_date'];
+    $venue=$row['r_venue'];
+    $balance=$row['balance'];
+    $payable=$row['payable'];
+    $ocassion=$row['r_ocassion'];
+    $status=$row['r_status'];
+    $motif=$row['r_motif'];
+    $time=$row['r_time'];
+    $time=$row['r_time'];
+    $type=$row['r_type'];
+    $cid=$row['combo_id'];
+    if ($cid) {
+        $query1 = mysqli_query($con,"select * from combo where combo_id='$cid'")or die(mysqli_error($con));
+        $row1 = mysqli_fetch_array($query1);
+    }
+
+    $cname = !empty($row1) ? $row1['combo_name'] : "Custom Package";
 
 ?>                      
                       <tr>
@@ -123,7 +129,7 @@ include('includes/dbcon.php');
 </table>
 <br>
 <div style="width:50%;float:left">
-  <h4><?php echo $row['combo_name'];?></h4>
+  <h4><?php echo $cname;?></h4>
   <span>No. of persons: <?php echo $row['pax'];?> * <?php echo $row['price'];?> = <?php echo $row['payable'];?></span>
   <ul>
 
