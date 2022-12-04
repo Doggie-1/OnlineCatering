@@ -17,6 +17,29 @@ endif;
     h4,h3{
       margin:0px;
     }
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 4px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      text-align: left;
+      background-color: #7d1e1b;
+      color: white;
+    }
   </style>  
 </head>
 
@@ -33,20 +56,23 @@ endif;
 include('../includes/dbcon.php');
     $id=$_REQUEST['id'];
     $query=mysqli_query($con,"select * from reservation where rid='$id'")or die(mysqli_error($con));
-      $row=mysqli_fetch_array($query);
-        $id=$row['rid'];
-        $rcode=$row['r_code'];
-        $first=$row['r_first'];
-        $last=$row['r_last'];
-        $contact=$row['r_contact'];
-        $address=$row['r_address'];
-        $date=$row['r_date'];
-        $venue=$row['r_venue'];
-        $balance=$row['balance'];
-        $payable=$row['payable'];
-        $type=$row['r_type'];
-        $status=$row['r_status'];
-        $motif=$row['r_motif'];
+    $row=mysqli_fetch_array($query);
+    $id=$row['rid'];
+    $rcode=$row['r_code'];
+    $first=$row['r_first'];
+    $last=$row['r_last'];
+    $contact=$row['r_contact'];
+    $address=$row['r_address'];
+    $date=$row['r_date'];
+    $venue=$row['r_venue'];
+    $balance=$row['balance'];
+    $payable=$row['payable'];
+    $pax=$row['pax'];
+    $price=$row['price'];
+    $type=$row['r_type'];
+    $status=$row['r_status'];
+    $motif=$row['r_motif'];
+    $cid=$row['combo_id'];
 ?>                      
                       <tr>
                         <td class="label">RCode: </td>
@@ -84,25 +110,38 @@ include('../includes/dbcon.php');
                       </tr>  
 </table>
 <br>
-<?php
-    
-    $query1=mysqli_query($con,"select * from r_details natural join combo where rid='$id'")or die(mysqli_error($con));
-      while($row1=mysqli_fetch_array($query1))
-      {
-        $rid=$row1['r_details_id'];
-?>
-<div style="width:50%;float:left">
-  <h4><?php echo $row1['combo_name'];?></h4>
-  <span>No. of persons: <?php echo $row1['r_nop'];?> * <?php echo $row1['r_price'];?> = P <?php echo $row1['r_nop']*$row1['r_price'];?></span>
-  <ul>
-<?php
-      $query2=mysqli_query($con,"select * from r_combo natural join menu where r_details_id='$rid'")or die(mysqli_error($con));
-      while($row2=mysqli_fetch_array($query2))
-      {
-?>    
-    <li><?php echo  $row2['menu_name'];?></li>
-<?php }?>    
-</div>
-<?php }?>
+    <?php
+        if ($cid) {
+            $query1 = mysqli_query($con,"select * from combo natural join menu where combo_id='$cid'")or die(mysqli_error($con));
+        } else {
+            $query1 = mysqli_query($con, "SELECT * FROM custom_details natural join menu WHERE reservation_id='$id'");
+        }
+        $row1 = mysqli_fetch_array($query1);
+
+        $cname = !empty($row1) ? $row1['combo_name'] : "Custom Package";
+    ?>
+        <div style="width:30%; float:left">
+            <h4><?php echo $cname;?></h4>
+            <span>No. of persons: <?php echo $pax;?> * <?php echo $price;?> = P <?php echo $payable;?></span>
+            <table id="customers">
+                <tr>
+                    <th>Menu</th>
+                    <th>Price</th>
+                </tr>
+                <?php while($row1 = mysqli_fetch_array($query1)) {?>
+                    <tr>
+                        <td><?php echo  $row1['menu_name'];?></td>
+                        <td><?php echo  $row1['menu_price'];?></td>
+                    </tr>
+                <?php } ?>
+                <tr>
+                    <td>Total</td>
+                    <td><?php echo  $price;?></td>
+                </tr>
+            </table>
+        </div>
+    <?php
+    //}
+    ?>
 </body>
 </html>
