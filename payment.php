@@ -32,23 +32,37 @@ endif;
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label">Package Details</label>
                                   <div class="col-lg-5">
-<?php 
-include('includes/dbcon.php');
-$id = $_SESSION['id'];
-$query = mysqli_query($con, "SELECT * FROM reservation natural join combo WHERE rid='$id'");
-      $row=mysqli_fetch_array($query);
-        $cid=$row['combo_id'];
-          echo "<b>".$row['combo_name']."</b>";
-      $query1 = mysqli_query($con, "SELECT * FROM combo_details natural join menu WHERE combo_id='$cid'");
-        while($row1=mysqli_fetch_array($query1))
-        {
+    <?php
+        include('includes/dbcon.php');
+            $id = $_SESSION['id'];
+            $query = mysqli_query($con, "SELECT * FROM reservation WHERE rid='$id'");
+            $row=mysqli_fetch_array($query);
+            $cid=$row['combo_id'];
 
+            if ($cid) {
+                $query1 = mysqli_query($con, "SELECT * FROM combo_details natural join menu WHERE combo_id='$cid'");
+            } else {
+                $query1 = mysqli_query($con, "SELECT * FROM custom_details natural join menu WHERE reservation_id='$id'");
+            }
 
-?>
-                                    <?php   
-                                      echo "<br>";
-                                      echo $row1['menu_name'];
-                                    ?>
+            if ($cid) {
+                echo $cid;
+            } else {
+                echo "Custom Package";
+            }
+                echo "<br>";
+
+            while($row1=mysqli_fetch_array($query1))
+            {
+    ?>
+        <?php
+            if ($cid !== 0) {
+                echo $row1['menu_name'];
+            } else {
+                echo "Custom Package";
+            }
+            echo "<br>";
+        ?>
          <?php }?>                           
                                   </div>
                                 </div>    
