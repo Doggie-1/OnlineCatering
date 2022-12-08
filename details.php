@@ -124,7 +124,7 @@ javascript:window.history.forward(1);
                         </div>
                         <div class="widget-content referrer">
                             <!-- Widget content -->
-                            <table class="table table-striped table-bordered table-hover">
+                            <table class="table table-bordered table-hover">
                                 <tbody>
                                     <?php
 
@@ -136,7 +136,7 @@ javascript:window.history.forward(1);
                                                 $menu_price=$row1['menu_price'];
 
                                     ?>
-                                        <tr>
+                                        <tr style="background-color: white;">
                                                 <td onClick="addMenu(this);" data-code="<?php echo $menu_id;?>" data-id="<?php echo $menu_name;?>" value="<?php echo $menu_price;?>"><?php echo $menu_name;?></td>
                                         </tr>
 
