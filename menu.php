@@ -52,7 +52,7 @@
 								$pic=$rowm['menu_pic'];
 ?>                        
                       <a href="images/<?php echo $pic;?>" class="prettyPhoto[pp_gal]" title="<?php echo $menu." - P".$price;?>" alt="<?php echo $menu." - P".$price;?>">
-                      		<img src="images/<?php echo $pic;?>" alt="<?php echo $menu." - P".$price;?>">
+                      		<img style="object-fit: cover; height: 100px; width: 170px;" src="images/<?php echo $pic;?>" alt="<?php echo $menu." - P".$price;?>">
                       		
                       </a>
                      <?php }?>
