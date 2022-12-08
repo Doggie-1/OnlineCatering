@@ -5,10 +5,11 @@ include('includes/dbcon.php');
 	$id = $_SESSION['id'];
 	$mode = $_POST['mode'];
 
-		mysqli_query($con,"UPDATE reservation SET modeofpayment='$mode',r_status='pending' where rid='$id'")or die(mysqli_error($con)); 
+    mysqli_query($con,"UPDATE reservation SET modeofpayment='$mode',r_status='pending' where rid='$id'")or die(mysqli_error($con));
 
-$query = mysqli_query($con, "SELECT * FROM reservation natural join combo WHERE rid='$id'");
-      $row=mysqli_fetch_array($query);
+    $query = mysqli_query($con, "SELECT * FROM reservation natural join combo WHERE rid='$id'");
+    $row=mysqli_fetch_array($query);
+    if (mysqli_num_rows($query) === 0) {
         $rcode=$row['r_code'];
         $first=$row['r_first'];
         $last=$row['r_last'];
@@ -29,36 +30,40 @@ $query = mysqli_query($con, "SELECT * FROM reservation natural join combo WHERE 
         $cid=$row['combo_id'];
         $combo=$row['combo_name'];
 
-    ini_set( 'display_errors', 1 );
-    
-    error_reporting( E_ALL );
-    
-    $from = "jsmith231415@gmail.com";
-    
-    $to = $email;
-    
-    $subject = "Reservation Details";
-    
-    $message = "Dear $first $last. Below are your reservation details to Lee Pipez Catering<br>
-    	Reservation Code: $rcode
-    	Event Date: $date
-    	Event Time: $time
-    	Venue: $venue
-    	Motif: $motif
-    	Ocassion: $ocassion
-    	Total Payable: $payable
-    	Package: $combo
-    	
-    ";
-    
-    $headers = "From:" . $from;
-    
-    mail($to,$subject,$message, $headers);
-    
-    echo "<script>
-		alert('Check Your Email Inbox for the details');		
-	</script>";
-			
-			echo "<script>document.location='summary.php'</script>";   
+        ini_set( 'display_errors', 1 );
+
+        error_reporting( E_ALL );
+
+        $from = "jsmith231415@gmail.com";
+
+        $to = $email;
+
+        $subject = "Reservation Details";
+
+        $message = "Dear $first $last. Below are your reservation details to Lee Pipez Catering<br>
+            Reservation Code: $rcode
+            Event Date: $date
+            Event Time: $time
+            Venue: $venue
+            Motif: $motif
+            Ocassion: $ocassion
+            Total Payable: $payable
+            Package: $combo
+
+        ";
+
+        $headers = "From:" . $from;
+
+        mail($to,$subject,$message, $headers);
+
+        echo "<script>
+            alert('Check Your Email Inbox for the details');
+        </script>";
+    } else {
+        echo "<script>
+            alert('No Details Found.');
+        </script>";
+    }
+    echo "<script>document.location='summary.php'</script>";
 	
 ?>
