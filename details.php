@@ -137,9 +137,8 @@ javascript:window.history.forward(1);
 
                                     ?>
                                         <tr style="background-color: white;">
-                                                <td onClick="addMenu(this);" data-code="<?php echo $menu_id;?>" data-id="<?php echo $menu_name;?>" value="<?php echo $menu_price;?>"><?php echo $menu_name;?></td>
+                                            <td onClick="addMenu(this);" data-code="<?php echo $menu_id;?>" data-id="<?php echo $menu_name;?>" value="<?php echo $menu_price;?>"><?php echo $menu_name;?></td>
                                         </tr>
-
                                     <?php }?>
                                 </tbody>
                             </table>

@@ -12,21 +12,54 @@ endif;
   <title>Dashboard - <?php include('../includes/title.php');?></title>
   <?php include('../includes/links.php');?>
   <style>
+  .table-container {
+      height: 450px;
+  }
   table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+      width: 100%;
+      background-color: white;
+      border-collapse: collapse;
+      font-family: arial, sans-serif;
   }
-
+  table thead {
+      /* head takes the height it requires,
+      and it's not scaled when table is resized */
+      flex: 0 0 auto;
+      width: calc(100% - 0.9em);
+  }
+  table tbody {
+      /* body takes all the remaining available space */
+      flex: 1 1 auto;
+      display: block;
+      overflow-y: scroll;
+  }
+  table tbody tr {
+      width: 100%;
+  }
+  table thead, table tbody tr {
+      display: table;
+      table-layout: fixed;
+  }
   td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-    background-color: white;
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      background-color: whit
+  }
+  tbody::-webkit-scrollbar {
+     width: 11px;
+  }
+  tbody::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   }
 
-  tr:nth-child(even) {
-    background-color: gray;
+  tbody::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    border-radius: 10px
   }
   </style>
 </head>
@@ -127,43 +160,49 @@ include('../includes/dbcon.php');
         </div>
     </div>
     </div>  <!--row-->
-    <table>
-        <tr>
-            <th>Customer Name</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Status</th>
-            <th>Balance</th>
-            <th>Total</th>
-            <th>Code</th>
-            <th>Package</th>
-        </tr>
-        <?php
-            $reservationQuery=mysqli_query($con,"select * from reservation")or die(mysqli_error($con));
-            while($reservationRow=mysqli_fetch_array($reservationQuery)){
-            $cid=$reservationRow['combo_id'];
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Status</th>
+                    <th>Balance</th>
+                    <th>Total</th>
+                    <th>Code</th>
+                    <th>Package</th>
+                </tr>
+            </thead>
+            <tbody id="body">
+                <?php
+                    $reservationQuery=mysqli_query($con,"select * from reservation order by rid desc")or die(mysqli_error($con));
+                    while($reservationRow=mysqli_fetch_array($reservationQuery)){
+                    $cid=$reservationRow['combo_id'];
 
-            if ($cid) {
-                $comboQuery = mysqli_query($con,"select * from combo where combo_id='$cid'")or die(mysqli_error($con));
-                $comboRow = mysqli_fetch_array($comboQuery);
-                $cname = $comboRow['combo_name'];
-            } else {
-                $cname = "Custom Package";
-            }
+                    if ($cid) {
+                        $comboQuery = mysqli_query($con,"select * from combo where combo_id='$cid'")or die(mysqli_error($con));
+                        $comboRow = mysqli_fetch_array($comboQuery);
+                        $cname = $comboRow['combo_name'];
+                    } else {
+                        $cname = "Custom Package";
+                    }
 
-        ?>
-            <tr>
-                <td><?php echo $reservationRow['r_first'] . "," . $reservationRow['r_last']?></td>
-                <td><?php echo $reservationRow['r_email']?></td>
-                <td><?php echo $reservationRow['r_address']?></td>
-                <td><?php echo $reservationRow['r_status']?></td>
-                <td><?php echo $reservationRow['balance']?></td>
-                <td><?php echo $reservationRow['payable']?></td>
-                <td><?php echo $reservationRow['r_code']?></td>
-                <td><?php echo $cname?></td>
-            </tr>
-        <?php }?>
-    </table>
+                ?>
+                    <tr>
+                        <td><?php echo $reservationRow['r_first'] . "," . $reservationRow['r_last']?></td>
+                        <td><?php echo $reservationRow['r_email']?></td>
+                        <td><?php echo $reservationRow['r_address']?></td>
+                        <td><?php echo $reservationRow['r_status']?></td>
+                        <td><?php echo $reservationRow['balance']?></td>
+                        <td><?php echo $reservationRow['payable']?></td>
+                        <td><?php echo $reservationRow['r_code']?></td>
+                        <td><?php echo $cname?></td>
+                    </tr>
+                <?php }?>
+            </tbody>
+        </table>
+    </div>
 
 
                     </ul>
