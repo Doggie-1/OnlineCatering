@@ -61,6 +61,13 @@ endif;
     outline: 1px solid slategrey;
     border-radius: 10px
   }
+  span {
+    display: block;
+    width: 140px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
   </style>
 </head>
 
@@ -190,14 +197,14 @@ include('../includes/dbcon.php');
 
                 ?>
                     <tr>
-                        <td><?php echo $reservationRow['r_first'] . "," . $reservationRow['r_last']?></td>
-                        <td><?php echo $reservationRow['r_email']?></td>
-                        <td><?php echo $reservationRow['r_address']?></td>
-                        <td><?php echo $reservationRow['r_status']?></td>
-                        <td><?php echo $reservationRow['balance']?></td>
-                        <td><?php echo $reservationRow['payable']?></td>
-                        <td><?php echo $reservationRow['r_code']?></td>
-                        <td><?php echo $cname?></td>
+                        <td><span><?php echo $reservationRow['r_first'] . "," . $reservationRow['r_last']?></span></td>
+                        <td><span><?php echo $reservationRow['r_email']?></span></td>
+                        <td><span><?php echo $reservationRow['r_address']?></span></td>
+                        <td><span><?php echo $reservationRow['r_status']?></span></td>
+                        <td><span><?php echo $reservationRow['balance']?></span></td>
+                        <td><span><?php echo $reservationRow['payable']?></span></td>
+                        <td><span><?php echo $reservationRow['r_code']?></span></td>
+                        <td><span><?php echo $cname?></td>
                     </tr>
                 <?php }?>
             </tbody>
