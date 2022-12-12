@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost","root","","reservation");
+$con = mysqli_connect("localhost","root","","OnlineCatering");
 
 // Check connection
 if (mysqli_connect_errno())
