@@ -11,7 +11,58 @@ endif;
   <!-- Title and other stuffs -->
   <title>Combo Meals - <?php include('../includes/title.php');?></title>
   <?php include('../includes/links.php');?>
-  
+
+  <style>
+  .table-container {
+      height: 140px;
+  }
+  table {
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+      width: 100%;
+      background-color: white;
+      border-collapse: collapse;
+      font-family: arial, sans-serif;
+  }
+  table thead {
+      /* head takes the height it requires,
+      and it's not scaled when table is resized */
+      flex: 0 0 auto;
+      width: calc(100% - 0.9em);
+  }
+  table tbody {
+      /* body takes all the remaining available space */
+      flex: 1 1 auto;
+      display: block;
+      overflow-y: scroll;
+  }
+  table tbody tr {
+      width: 100%;
+  }
+  table thead, table tbody tr {
+      display: table;
+      table-layout: fixed;
+  }
+  td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      background-color: whit
+  }
+  tbody::-webkit-scrollbar {
+     width: 11px;
+  }
+  tbody::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  tbody::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    border-radius: 10px;
+  }
+  </style>
 </head>
 
 <body>
@@ -194,26 +245,26 @@ include('../includes/dbcon.php');
                   </div>  
                   <div class="clearfix"></div>
                 </div>
-                <div class="widget-content referrer">
+                <div class="table-container widget-content referrer">
                   <!-- Widget content -->
                   
                   <table class="table table-striped table-bordered table-hover">
-                    <tbody>
-<?php
+                    <tbody id="body">
+				<?php
 
-    $query1=mysqli_query($con,"select * from combo_details natural join menu where combo_id='$id'")or die(mysqli_error($con));
-      while ($row1=mysqli_fetch_array($query1)){
-        $cid=$row1['combo_details_id'];
-        $menu_id=$row1['menu_id'];
-        $menu_name=$row1['menu_name'];
-        
-?>                        
-                    <tr>
-                      <td><?php echo $menu_name;?></td>
-                    </tr> 
-                   
-                
-<?php }?>                    
+				    $query1=mysqli_query($con,"select * from combo_details natural join menu where combo_id='$id'")or die(mysqli_error($con));
+				      while ($row1=mysqli_fetch_array($query1)){
+				        $cid=$row1['combo_details_id'];
+				        $menu_id=$row1['menu_id'];
+				        $menu_name=$row1['menu_name'];
+
+				?>
+				                    <tr>
+				                      <td><?php echo $menu_name;?></td>
+				                    </tr>
+
+
+				<?php }?>
                     
                   </tbody></table>
 
