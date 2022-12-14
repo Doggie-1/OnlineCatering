@@ -66,7 +66,6 @@ endif;
                     $status=$row['r_status'];
                     $motif=$row['r_motif'];
                     $time=$row['r_time'];
-                    $time=$row['r_time'];
                     $type=$row['r_type'];
                     $cid=$row['combo_id'];
                     if ($cid) {
