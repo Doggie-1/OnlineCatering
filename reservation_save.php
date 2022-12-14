@@ -9,13 +9,13 @@ include('includes/dbcon.php');
 	$email = $_POST['email'];
 	$date = date("Y-m-d");
 
-	$string="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	$string="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	$code="";
 	$limit=10;
 	$i=0;
 	while($i<=$limit)
 	{
-		$rand=rand(0,61);
+		$rand=rand(0,35);
 		$code.=$string[$rand];
 		$i++;
 	}

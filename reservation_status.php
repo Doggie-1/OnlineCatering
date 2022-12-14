@@ -38,11 +38,11 @@ endif;
                       <b>Reminder: Please print your reservation summary and take note of your reservation code for reservation inquiry.</b>
                     </div>
 
-                    <h3 style="text-align:center">Lee Pipez's Catering Services</h3>
-<h4 style="text-align:center">Talisay City</h4>
-<h4 style="text-align:center">Tel. No. : 435-0001</h4>
-<h4 style="text-align:center">Email : emoblazz@gmail.com</h4>
-<h4 style="text-align:center">Facebook : facebook.com/progaddictbylee</h4>
+                    <h3 style="text-align:center">Kirby's Magic Kan-anan Catering Services</h3>
+<h4 style="text-align:center">Pabayo Chaves St., Cagayan de Oro, Philippines</h4>
+<h4 style="text-align:center">Phone No. : 09561275037</h4>
+<h4 style="text-align:center">Email : kirbybrik23@gmail.com</h4>
+<h4 style="text-align:center">Facebook : https://www.facebook.com/Magic.Kan.anan</h4>
 <hr>
 
     <div class="grid-container">
@@ -63,10 +63,8 @@ endif;
                     $balance=$row['balance'];
                     $payable=$row['payable'];
                     $ocassion=$row['r_ocassion'];
-                    $team=$row['team_id'];
                     $status=$row['r_status'];
                     $motif=$row['r_motif'];
-                    $time=$row['r_time'];
                     $time=$row['r_time'];
                     $type=$row['r_type'];
                     $cid=$row['combo_id'];
