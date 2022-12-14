@@ -61,7 +61,7 @@ endif;
     outline: 1px solid slategrey;
     border-radius: 10px
   }
-  span {
+  td span {
     display: block;
     width: 140px;
     overflow: hidden;
