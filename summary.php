@@ -16,6 +16,28 @@ endif;
     tr {
         font-size: 15px;
     }
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 4px;
+    }
+
+    #customers tr {background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      text-align: left;
+      background-color: #7d1e1b;
+      color: white;
+    }
 </style>
 <body>
 	<?php include 'navbar.php';?>
@@ -56,6 +78,7 @@ endif;
                     $id=$_SESSION['id'];
                     $query=mysqli_query($con,"select * from reservation where rid='$id'")or die(mysqli_error($con));
                     $row=mysqli_fetch_array($query);
+                    $rid=$row['rid'];
                     $rcode=$row['r_code'];
                     $first=$row['r_first'];
                     $last=$row['r_last'];
@@ -143,10 +166,40 @@ endif;
                     {
                 ?>
                     <li><?php echo  $row1['menu_name'];?></li>
-
                 <?php }?>
+            </div>
+        <div class="grid-item">
+            <?php
+                $price = 0;
+                if ($cid) {
+                    $query1 = mysqli_query($con,"select * from combo natural join menu where combo_id='$cid'")or die(mysqli_error($con));
+                } else {
+                    $query1 = mysqli_query($con, "SELECT * FROM custom_details natural join menu WHERE reservation_id='$id'");
+                }
+                $row1 = mysqli_fetch_array($query1);
+                $price += $row1['menu_price'];
+            ?>
+                <div>
+                    <table id="customers">
+                        <tr>
+                            <th>Menu</th>
+                            <th>Price</th>
+                        </tr>
+                        <?php while($row1 = mysqli_fetch_array($query1)) {?>
+                            <tr>
+                                <td><?php echo  $row1['menu_name'];?></td>
+                                <td><?php echo  $row1['menu_price'];?></td>
+                            </tr>
+                        <?php } ?>
+                        <tr>
+                            <td>Total</td>
+                            <td><?php echo  $price;?></td>
+                        </tr>
+                    </table>
+                </div>
+            <?php   ?>
         </div>
-    </div>
+        </div>
 </div>
 
 

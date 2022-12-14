@@ -8,27 +8,25 @@ include('includes/dbcon.php');
     mysqli_query($con,"UPDATE reservation SET modeofpayment='$mode',r_status='pending' where rid='$id'")or die(mysqli_error($con));
 
     $query = mysqli_query($con, "SELECT * FROM reservation natural join combo WHERE rid='$id'");
-    $row=mysqli_fetch_array($query);
-    if (mysqli_num_rows($query) === 0) {
-        $rcode=$row['r_code'];
-        $first=$row['r_first'];
-        $last=$row['r_last'];
-        $contact=$row['r_contact'];
-        $address=$row['r_address'];
-        $email=$row['r_email'];
-        $date=$row['r_date'];
-        $venue=$row['r_venue'];
-        $balance=$row['balance'];
-        $payable=$row['payable'];
-        $ocassion=$row['r_ocassion'];
+    if (mysqli_num_rows($query) == 0) {
+        $rcode= array_key_exists("r_code",$_POST) ? $query['r_code'] : "";
+        $first=array_key_exists("r_first",$_POST) ? $query['r_first'] : "";
+        $last=array_key_exists("r_last",$_POST) ? $query['r_last'] : "";
+        $contact=array_key_exists("r_contact",$_POST) ? $query['r_contact'] : "";
+        $address=array_key_exists("r_address",$_POST) ? $query['r_address'] : "";
+        $email=array_key_exists("r_email",$_POST) ? $query['r_email'] : "";
+        $date=array_key_exists("r_date",$_POST) ? $query['r_date'] : "";
+        $venue=array_key_exists("r_venue",$_POST) ? $query['r_venue'] : "";
+        $balance=array_key_exists("balance",$_POST) ? $query['balance'] : "";
+        $payable=array_key_exists("payable",$_POST) ? $query['payable'] : "";
+        $ocassion=array_key_exists("r_ocassion",$_POST) ? $query['r_ocassion'] : "";
         // $team=$row['team_name'];
-        $status=$row['r_status'];
-        $motif=$row['r_motif'];
-        $time=$row['r_time'];
-        $time=$row['r_time'];
-        $type=$row['r_type'];
-        $cid=$row['combo_id'];
-        $combo=$row['combo_name'];
+        $status=array_key_exists("r_status",$_POST) ? $query['r_status'] : "";
+        $motif=array_key_exists("r_motif",$_POST) ? $query['r_motif'] : "";
+        $time=array_key_exists("r_time",$_POST) ? $query['r_time'] : "";
+        $type=array_key_exists("r_type",$_POST) ? $query['r_type'] : "";
+        $cid=array_key_exists("combo_id",$_POST) ? $query['combo_id'] : "";
+        $combo=array_key_exists("combo_name",$_POST) ? $query['combo_name'] : "";
 
         ini_set( 'display_errors', 1 );
 
