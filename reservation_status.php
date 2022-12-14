@@ -63,7 +63,6 @@ endif;
                     $balance=$row['balance'];
                     $payable=$row['payable'];
                     $ocassion=$row['r_ocassion'];
-                    $team=$row['team_id'];
                     $status=$row['r_status'];
                     $motif=$row['r_motif'];
                     $time=$row['r_time'];
