@@ -39,7 +39,7 @@ endif;
     #customers th {
       padding-top: 8px;
       padding-bottom: 8px;
-      text-align: left;
+      text-align: center;
       background-color: #7d1e1b;
       color: white;
     }
@@ -68,11 +68,11 @@ endif;
     <div class="alert alert-success">
         <b>Reminder: Please print your reservation summary and take note of your reservation code for reservation inquiry.</b>
     </div>
-        <h3 style="text-align:center">Chimney's Catering Services</h3>
-        <h4 style="text-align:center">Mabini Street, Fisheries Avenue, Talisay City</h4>
-        <h4 style="text-align:center">Tel. No. : 435-1114</h4>
-        <h4 style="text-align:center">Email : chimneycatering@yahoo.com</h4>
-        <h4 style="text-align:center">Facebook : facebook.com/chimneycatering</h4>
+        <h3 style="text-align:center">Kirby's Magic Kan-anan Catering Services</h3>
+        <h4 style="text-align:center">Pabayo Chaves St., Cagayan de Oro, Philippines</h4>
+        <h4 style="text-align:center">Phone No.: 09561275037</h4>
+        <h4 style="text-align:center">Email : kirbybrik23@gmail.com</h4>
+        <h4 style="text-align:center">Facebook : https://www.facebook.com/Magic.Kan.anan</h4>
 
     <hr>
 
