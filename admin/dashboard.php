@@ -141,7 +141,7 @@ include('../includes/dbcon.php');
                       <div class="col-md-4">
                         <div class="alert alert-info">
                           <i class="fa fa-thumbs-o-up pull-left" style="font-size:65px"></i><h2> <?php echo $count;?> </h2>
-                          <p>Approved</p>
+                          <p>Confirmed</p>
                         </div>
                       </div>
 <?php
