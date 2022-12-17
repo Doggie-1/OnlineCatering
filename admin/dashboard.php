@@ -114,7 +114,7 @@ endif;
           <a href="index.html"><i class="fa fa-home"></i> Home</a> 
           <!-- Divider -->
           <span class="divider">/</span> 
-          <a href="#" class="bread-current">Reservations</a>
+          <a href="#" class="bread-current">Reservations Status</a>
           <span class="divider">/</span> 
           <a href="#" class="bread-current">View Details</a>
         </div>
@@ -134,7 +134,7 @@ endif;
 <?php
 include('../includes/dbcon.php');
     $today=date('Y-m-d');
-    $query=mysqli_query($con,"select COUNT(*) as count from reservation where r_status='Approved' and r_date>='$today'")or die(mysqli_error($con));
+    $query=mysqli_query($con,"select COUNT(*) as count from reservation where r_status='Confirmed' and r_date>='$today'")or die(mysqli_error($con));
       $row=mysqli_fetch_array($query);
         $count=$row['count'];
 ?>             
