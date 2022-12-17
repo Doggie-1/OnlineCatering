@@ -70,7 +70,7 @@ endif;
     </div>
         <h3 style="text-align:center">Kirby's Magic Kan-anan Catering Services</h3>
         <h4 style="text-align:center">Pabayo Chaves St., Cagayan de Oro, Philippines</h4>
-        <h4 style="text-align:center">Phone No.: 09561275037</h4>
+        <h4 style="text-align:center">Phone No.: 09551674660</h4>
         <h4 style="text-align:center">Email : kirbybrik23@gmail.com</h4>
         <h4 style="text-align:center">Facebook : https://www.facebook.com/Magic.Kan.anan</h4>
 
