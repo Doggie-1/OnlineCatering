@@ -156,7 +156,7 @@ javascript:window.history.forward(1);
                 <div class="widget">
                     <!-- Widget title -->
                     <div class="widget-head">
-                        <div class="pull-left">Custom - P 0</div>
+                        <div class="pull-left">Custom Package</div>
                         <div class="widget-icons pull-right"></div>
                         <div class="clearfix"></div>
                     </div>
