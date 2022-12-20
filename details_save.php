@@ -19,7 +19,6 @@ include('includes/dbcon.php');
 
     if(mysqli_num_rows($query) > 0)
     {
-        echo "<script>alert ('Date is already reserved');</script>";
         echo "<script>document.location='details.php'</script>";
     } else {
         $query = mysqli_query($con, "SELECT * FROM combo WHERE combo_id='$cid'");

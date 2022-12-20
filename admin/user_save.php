@@ -8,8 +8,7 @@ include('../includes/dbcon.php');
 	
 	
 		mysqli_query($con,"INSERT INTO user(full_name,username,password,status) 
-			VALUES('$name','$username','$password','active')")or die(mysqli_error());  
-			echo "<script type='text/javascript'>alert('Successfully added new admin user!');</script>";
+			VALUES('$name','$username','$password','active')")or die(mysqli_error());
 			echo "<script>document.location='user.php'</script>";   
 	
 	

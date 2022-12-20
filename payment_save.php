@@ -53,14 +53,6 @@ include('includes/dbcon.php');
         $headers = "From:" . $from;
 
         mail($to,$subject,$message, $headers);
-
-        echo "<script>
-            alert('Check Your Email Inbox for the details');
-        </script>";
-    } else {
-        echo "<script>
-            alert('No Details Found.');
-        </script>";
     }
     echo "<script>document.location='summary.php'</script>";
 	

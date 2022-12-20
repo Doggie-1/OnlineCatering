@@ -10,13 +10,11 @@ include('../includes/dbcon.php');
         if ($count==0)
         {
 			mysqli_query($con,"INSERT INTO category(cat_name) 
-				VALUES('$category')")or die(mysqli_error());  
-				echo "<script type='text/javascript'>alert('Successfully added new category!');</script>";
+				VALUES('$category')")or die(mysqli_error());
 				echo "<script>document.location='category.php'</script>";   
 		}
 		else
-		{	
-				echo "<script type='text/javascript'>alert('Category already added!');</script>";
+		{
 				echo "<script>document.location='category.php'</script>";  
 		}
 	

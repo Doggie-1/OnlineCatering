@@ -34,6 +34,5 @@ include('dbcon.php');
 		mysqli_query($con,"INSERT INTO package_details(package_id,cat_id,group_id) 
 			VALUES('$id','$value','4')")or die(mysqli_error($con));  
 	}
-			echo "<script type='text/javascript'>alert('Successfully added new package!');</script>";
 			echo "<script>document.location='package.php'</script>";   
 ?>

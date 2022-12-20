@@ -42,13 +42,11 @@ include('../includes/dbcon.php');
 					}
 			}	
 				mysqli_query($con,"INSERT INTO menu(menu_name,cat_id,subcat_name,menu_desc,menu_price,menu_pic) 
-					VALUES('$menu','$cat','$subcat','$desc','$price','$name')")or die(mysqli_error());  
-					echo "<script type='text/javascript'>alert('Successfully added new menu!');</script>";
+					VALUES('$menu','$cat','$subcat','$desc','$price','$name')")or die(mysqli_error());
 					echo "<script>document.location='menu.php'</script>";   
 		}
 		else
 		{
-					echo "<script type='text/javascript'>alert('Menu already added!');</script>";
 					echo "<script>document.location='menu.php'</script>";  
 		}	
 ?>

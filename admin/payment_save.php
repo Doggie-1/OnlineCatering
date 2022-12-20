@@ -70,9 +70,8 @@ $query = mysqli_query($con, "SELECT * FROM reservation natural join combo WHERE 
     $headers = "From:" . $from;
     
     mail($to,$subject,$message, $headers);
-    	
-			echo "<script type='text/javascript'>alert('Successfully added new payment!');</script>";
-			echo "<script>document.location='pending.php'</script>";   
+
+	echo "<script>document.location='pending.php'</script>";
 	
 	
 ?>

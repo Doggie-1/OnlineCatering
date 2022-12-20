@@ -28,7 +28,6 @@ include('../includes/dbcon.php');
         }
 	}
 
-    echo "<script type='text/javascript'>alert('Successfully updated combo meal details!');</script>";
     echo "<script>document.location='combo.php'</script>";
 	
 } 

@@ -8,7 +8,6 @@ include('../includes/dbcon.php');
 
 		mysqli_query($con,"UPDATE reservation SET team_id='$team' where rid='$id'")or die(mysqli_error($con)); 
 
-			echo "<script type='text/javascript'>alert('Successfully assigned a team!');</script>";
 			echo "<script>document.location='reservation.php'</script>";   
 	
 	

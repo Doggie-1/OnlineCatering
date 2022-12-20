@@ -40,7 +40,6 @@ include('../includes/dbcon.php');
 	 mysqli_query($con,"UPDATE menu SET menu_name='$menu',cat_id='$cat',subcat_name='$subcat',menu_desc='$desc',menu_price='$price',menu_pic='$name' where menu_id='$id'")
 	 or die(mysqli_error($con)); 
 
-		echo "<script type='text/javascript'>alert('Successfully updated menu details!');</script>";
 		echo "<script>document.location='menu.php'</script>";
 	
 } 
