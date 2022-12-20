@@ -95,13 +95,7 @@ javascript:window.history.forward(1);
                                   <div class="col-lg-5">
                                     <input type="number" class="form-control" placeholder="No. of Pax" min="1" name="pax">
                                   </div>
-                                </div> 
-                                <div class="form-group">
-                                  <label class="col-lg-2 control-label">Type</label>
-                                  <div class="col-lg-2">
-                                    <input type="radio" class="form-radio" name="type" value="buffet"> Buffet
-                                  </div>
-                                </div>  
+                                </div>
                                <div class="form-group">
     <label class="col-lg-2 control-label"></label>
         <div class="col-lg-5">
@@ -109,10 +103,16 @@ javascript:window.history.forward(1);
             include('includes/dbcon.php');
                 $query=mysqli_query($con,"select * from combo order by combo_name")or die(mysqli_error($con));
                 $count=mysqli_num_rows($query);
+                $ids = "";
                 while ($row=mysqli_fetch_array($query)){
                     $id=$row['combo_id'];
                     $name=$row['combo_name'];
                     $price=$row['combo_price'];
+                    if ($ids) {
+                        $ids = $ids . "," . $row['combo_id'];
+                    } else {
+                        $ids = $row['combo_id'];
+                    }
             ?>
                 <div class="col-md-6">
                     <div class="widget">
@@ -137,14 +137,17 @@ javascript:window.history.forward(1);
 
                                     ?>
                                         <tr style="background-color: white;">
-                                            <td onClick="addMenu(this);" data-code="<?php echo $menu_id;?>" data-id="<?php echo $menu_name;?>" value="<?php echo $menu_price;?>"><?php echo $menu_name;?></td>
+                                            <td onClick="addMenu(this);" data-code="<?php echo $menu_id;?>" data-id="<?php echo $menu_name;?>" value="<?php echo $menu_price;?>">
+                                                <span><?php echo $menu_name;?></span>
+                                                <span style="position: absolute; right: 30px;"><?php echo "P " . $menu_price;?></span>
+                                            </td>
                                         </tr>
                                     <?php }?>
                                 </tbody>
                             </table>
 
-                            <div class="widget-foot text-center">
-                                <input type="radio" id="inlineCheckbox1" value="<?php echo $id;?>" name="combo_id">
+                            <div class="widget-foot text-center" id="radioButton">
+	                                <input type="radio" id="inlineCheckbox<?php echo $id;?>" value="<?php echo $id;?>" name="combo_id">
                             </div>
                         </div>
                     </div>
@@ -157,7 +160,7 @@ javascript:window.history.forward(1);
                     <!-- Widget title -->
                     <div class="widget-head">
                         <div class="pull-left">Custom Package</div>
-                        <div class="widget-icons pull-right"></div>
+                        <div class="widget-icons pull-right"><span id="total" name="total"></span></div>
                         <div class="clearfix"></div>
                     </div>
                     <div class="widget-content referrer">
@@ -171,7 +174,7 @@ javascript:window.history.forward(1);
                     </div>
                 </div>
                 <div>
-                    <div style="font-weight: 700; font-size: 15px;">Total: <span id="total" name="total"></span></div>
+                    <input type="hidden" id="packagesId" value="<?php echo $ids?>" name="ids">
                     <input type="hidden" id="totalPrice" value="0" name="totalPrice">
                     <input type="hidden" id="customMenu" value="0" name="customMenu">
                 </div>
@@ -261,6 +264,9 @@ javascript:window.history.forward(1);
             menuId = tempMenu;
         }
         prices.map((viand, key) => {total = total + parseInt(viand)});
+        document.getElementById("packagesId").value.split(",").map((id) => {
+            document.getElementById(`inlineCheckbox${id}`).disabled = total === 0 ? false : true
+        })
         let totalPrice = document.getElementById("total");
         let totalPrices = document.getElementById("totalPrice");
         let customMenu = document.getElementById("customMenu");
