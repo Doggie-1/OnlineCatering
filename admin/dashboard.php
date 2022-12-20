@@ -103,7 +103,7 @@ endif;
     <!-- Sidebar ends -->
 
         <!-- Main bar -->
-    <div class="mainbar">
+    <div class="mainbar" style="height: 95vh;">
       
       <!-- Page heading -->
       <div class="page-head">
