@@ -52,7 +52,7 @@ include('includes/dbcon.php');
 
         $headers = "From:" . $from;
 
-        mail($to,$subject,$message, $headers);
+//         mail($to,$subject,$message, $headers);
     }
     echo "<script>document.location='summary.php'</script>";
 	
