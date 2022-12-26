@@ -158,7 +158,7 @@ endif;
         </div>
         <div class="grid-item">
             <div>
-                <h4><?php echo $cname;?></h4>
+                <h4 style="color: #7d1e1b;"><?php echo $cname;?></h4>
                 <span>No. of persons: <?php echo $row['pax'];?> * <?php echo $row['price'];?> = <?php echo $row['payable'];?></span>
             </div>
         <div class="grid-item">

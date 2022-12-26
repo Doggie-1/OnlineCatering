@@ -156,25 +156,18 @@ endif;
                 }
                 $row1 = mysqli_fetch_array($query1);
 
-                $cname = !empty($row1) ? $row1['combo_name'] : "Custom Package";
+                $cname = $cid ? $row1['combo_name'] : "Custom Package";
             ?>
                 <div>
-                    <table id="customers">
-                        <tr>
-                            <th>Menu</th>
-                            <th>Price</th>
-                        </tr>
-                        <?php while($row1 = mysqli_fetch_array($query1)) {?>
-                            <tr>
-                                <td><?php echo  $row1['menu_name'];?></td>
-                                <td><?php echo  $row1['menu_price'];?></td>
-                            </tr>
-                        <?php } ?>
-                        <tr>
-                            <td>Total</td>
-                            <td><?php echo  $price;?></td>
-                        </tr>
-                    </table>
+	                <h4 style="color: #7d1e1b;"><?php echo $cname;?></h4>
+	                <span>No. of persons: <?php echo $row['pax'];?> * <?php echo $row['price'];?> = <?php echo $row['payable'];?></span>
+	                <div style="margin-left: -25px;">
+	                    <ul>
+	                        <?php while($row1 = mysqli_fetch_array($query1)) {?>
+	                            <li><?php echo  $row1['menu_name'];?></li>
+	                        <?php } ?>
+	                    </ul>
+	                </div>
                 </div>
             <?php   ?>
         </div>
