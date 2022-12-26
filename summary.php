@@ -157,45 +157,27 @@ endif;
             </table>
         </div>
         <div class="grid-item">
-            <div style="width:50%;float:left">
+            <div>
                 <h4><?php echo $cname;?></h4>
                 <span>No. of persons: <?php echo $row['pax'];?> * <?php echo $row['price'];?> = <?php echo $row['payable'];?></span>
-                <?php
-                    $query1=mysqli_query($con,"select * from combo_details natural join menu where combo_id='$cid'")or die(mysqli_error($con));
-                    while($row1=mysqli_fetch_array($query1))
-                    {
-                ?>
-                    <li><?php echo  $row1['menu_name'];?></li>
-                <?php }?>
             </div>
         <div class="grid-item">
             <?php
                 $price = 0;
                 if ($cid) {
-                    $query1 = mysqli_query($con,"select * from combo natural join menu where combo_id='$cid'")or die(mysqli_error($con));
+                    $query1 = mysqli_query($con,"select * from combo_details natural join menu where combo_id='$cid'")or die(mysqli_error($con));
                 } else {
                     $query1 = mysqli_query($con, "SELECT * FROM custom_details natural join menu WHERE reservation_id='$id'");
                 }
-                $row1 = mysqli_fetch_array($query1);
-                $price += $row1['menu_price'];
             ?>
-                <div>
-                    <table id="customers">
-                        <tr>
-                            <th>Menu</th>
-                            <th>Price</th>
-                        </tr>
-                        <?php while($row1 = mysqli_fetch_array($query1)) {?>
-                            <tr>
-                                <td><?php echo  $row1['menu_name'];?></td>
-                                <td><?php echo  $row1['menu_price'];?></td>
-                            </tr>
+                <div style="margin-left: -45px; margin-top: -15px;">
+                    <ul>
+                        <?php while($row1 = mysqli_fetch_array($query1)) {
+                                   $price += $row1['menu_price'];
+                        ?>
+                            <li><?php echo  $row1['menu_name'];?></li>
                         <?php } ?>
-                        <tr>
-                            <td>Total</td>
-                            <td><?php echo  $price;?></td>
-                        </tr>
-                    </table>
+                    </ul>
                 </div>
             <?php   ?>
         </div>
