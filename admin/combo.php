@@ -193,7 +193,7 @@ include('../includes/dbcon.php');
                   <div class="form-group">
                       <label class="control-label col-lg-4" for="title">Price</label>
                       <div class="col-lg-8"> 
-                        <input type="text" class="form-control" name="price" id="title" placeholder="Price of Combo Meal" value="<?php echo $price;?>">
+                        <input type="text" class="form-control" name="price" id="price" placeholder="Price of Combo Meal" value="<?php echo $price;?>">
                       </div>
                   </div> 
                   <!-- Title -->
@@ -201,28 +201,39 @@ include('../includes/dbcon.php');
                   <div class="form-group">
                       <label class="control-label col-lg-4" for="username">Menu</label>
                       <div class="col-lg-8"> 
-                        <select class="form-control select2 " id="exampleSelect1" name="menu[]" multiple='multiple' style="width: 100%;height:200px" placeholder="Select multiple members">
-                        <?php
-                         $m = mysqli_query($con,"SELECT * FROM combo_details natural join menu where combo_id='$id'"); 
-                                  while ($rowm = mysqli_fetch_assoc($m)){  
-                         ?>
-                            <option selected value="<?php echo $rowm['menu_id'];?>"><?php echo $rowm['menu_name'];?></option>
-                         <?php           
-                                  }
-                        ?>  
-                         <?php
-                              $result = mysqli_query($con,"SELECT * FROM menu"); 
-                                  while ($row = mysqli_fetch_assoc($result)){
-
-                                ?>
-                                <option value="<?php echo $row['menu_id'];?>"><?php echo $row['menu_name'];?></option>
-                        <?php } ?>
+                        <select class="form-control select2 " id="update" name="update" multiple onchange="changeFunc();" style="width: 100%;height:200px" placeholder="Select multiple members">
+					<?php
+						$choices = [];
+						$prices = [];
+						$ids = [];
+						$m = mysqli_query($con,"SELECT * FROM combo_details natural join menu where combo_id='$id'");
+						while ($rowm = mysqli_fetch_assoc($m)){
+							array_push($choices, $rowm['menu_id']);
+					?>
+						<option selected value="<?php echo $rowm['menu_id'];?>"><?php echo $rowm['menu_name'];?></option>
+					<?php } ?>
+					<?php
+						$result = mysqli_query($con,"SELECT * FROM menu");
+						while ($row = mysqli_fetch_assoc($result)){
+		                    if ($prices) {
+		                        $ids = $ids . "," . $row['menu_id'];
+		                        $prices = $prices . "," . $row['menu_price'];
+		                    } else {
+		                        $ids = $row['menu_id'];
+		                        $prices = $row['menu_price'];
+		                    }
+							if (!in_array($row['menu_id'], $choices)) {
+					?>
+						<option value="<?php echo $row['menu_id'];?>"><?php echo $row['menu_name'];?></option>
+					<?php } } ?>
                         </select>
                       </div>
                   </div> 
                               
                   <!-- Buttons -->
                   <div class="col-lg-offset-4 col-lg-6">
+                        <input type="hidden" id="ids" value="<?php echo $ids?>" name="ids">
+                        <input type="hidden" id="menuPrices" value="<?php echo $prices?>" name="menuPrices">
                         <button type="submit" class="btn btn-sm btn-primary" name="update">Update</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
                   </div>  
@@ -329,14 +340,14 @@ include('../includes/dbcon.php');
                   <div class="form-group">
                       <label class="control-label col-lg-3" for="username">Menu</label>
                       <div class="col-lg-8"> 
-                        <select class="form-control select2 " id="exampleSelect1" name="menu[]" multiple='multiple' style="width: 100%;height:200px" placeholder="Select multiple members">
+                        <select class="form-control select2 " id="add" name="menu[]" multiple='multiple' style="width: 100%;height:200px" placeholder="Select multiple members">
                        
                          <?php
                               $result = mysqli_query($con,"SELECT * FROM menu"); 
                                   while ($row = mysqli_fetch_assoc($result)){
 
                                 ?>
-                                <option value="<?php echo $row['menu_id'];?>"><?php echo $row['menu_name'];?></option>
+                                <option data-encode="<?php echo $row['menu_price'];?>" value="<?php echo $row['menu_id'];?>" title="Hello"><?php echo $row['menu_name'];?></option>
                         <?php } ?>
                         </select>
                       </div>
@@ -375,9 +386,24 @@ include('../includes/dbcon.php');
          $(function () {
          //Initialize Select2 Elements
          $(".select2").select2();
-         
-
      })
+     const changeFunc = () => {
+        var total = 0;
+		var selectBox = document.getElementById("update");
+		var menuPrices = document.getElementById("menuPrices").value.split(",");
+		var ids = document.getElementById("ids").value.split(",");
+		$(".select2").val().map((item) => {
+			ids.map((id, key) => {
+				id === item ? menuPrices.map((price, keys) => {
+					key === keys ? total += parseInt(price) : null
+				})
+				:
+				null
+			})
+		})
+		document.getElementById("price").value = total.toFixed(2);
+		document.getElementById("price").innerText = total.toFixed(2);
+     }
     </script>
     
   
