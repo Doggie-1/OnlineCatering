@@ -6,7 +6,7 @@
 <div class="lockscreen-wrapper">
   <div class="lockscreen-logo">
     
-    <a style = "color:white;" href="../index.php">Kirby's Magic Kan-anan Catering Services</a>
+    <a style = "color:white;" href="../index.php">Kirby's Magic Kan-anan <b>Catering Services</a>
   </div>
   <!-- User name -->
   <div class="lockscreen-name">Administrator</div>
@@ -22,8 +22,8 @@
     <!-- lockscreen credentials (contains the form) -->
     <form class="lockscreen-credentials" action = "login.php"method = "POST">
       <div class="input-group">
-        <input type="username" name = "username" class="form-control" placeholder="username" autofocus>
-        <input type="password" name = "password" class="form-control" placeholder="password" >
+        <input type="username" name = "username" class="form-control" placeholder="Username" autofocus>
+        <input type="password" name = "password" class="form-control" placeholder="Password" >
 
         <div class="input-group-btn">
           <button name = "login"class="btn"><i class="fa fa-arrow-right "></i></button>
