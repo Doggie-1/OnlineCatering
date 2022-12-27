@@ -6,7 +6,7 @@
 <div class="lockscreen-wrapper">
   <div class="lockscreen-logo">
     
-    <a style = "color:white;" href="../index.php">Kirby's Magic Kan-anan <b>Catering Services</a>
+    <a style = "color:white;" href="../index.php">Kirby's Magic Kan-anan</a>
   </div>
   <!-- User name -->
   <div class="lockscreen-name">Administrator</div>
