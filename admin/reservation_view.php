@@ -106,8 +106,8 @@ endif;
                     <td><b><?php echo $rcode;?></b></td>
                 </tr>
                 <tr>
-                    <td>Name: </td>
-                    <td><?php echo $last." ,".$first;?></td>
+                    <td><h4>Name: </h4></td>
+                    <td><h4><?php echo $last." ,".$first;?></h4></td>
                 </tr>
                 <tr>
                     <td>Contact #: </td>
