@@ -102,7 +102,7 @@ endif;
                     $cid=$row['combo_id'];
                 ?>
                 <tr>
-                    <td>RCode: </td>
+                    <td><b>RCode: </b></td>
                     <td><?php echo $rcode;?></td>
                 </tr>
                 <tr>
