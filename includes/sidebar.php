@@ -21,7 +21,7 @@
           <li class="has_sub">
 			<a href="#"><i class="fa fa-file-o"></i> Maintenance  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
             <ul>			
-              <li><a href="menu.php"><b>Menu</a></b></li>
+		    <li><a href="menu.php"><b>Menu</b></a></li>
               <li><a href="category.php"><b>Category</b></a></li>
               <li><a href="subcategory.php"><b>Subcategory</b></a></li>
               <li><a href="user.php"><b>User</b></a></li>
