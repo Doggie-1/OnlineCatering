@@ -169,7 +169,7 @@ endif;
 	                <div style="margin-left: -25px;">
 	                    <ul>
 	                        <?php while($row1 = mysqli_fetch_array($query1)) {?>
-	                            <li><?php echo  $row1['menu_name'];?></li>
+	                            <li><h6><?php echo  $row1['menu_name'];?></h6></li>
 	                        <?php } ?>
 	                    </ul>
 	                </div>
