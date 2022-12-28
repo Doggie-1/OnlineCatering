@@ -190,7 +190,7 @@ include('../includes/dbcon.php');
                     if ($cid) {
                         $comboQuery = mysqli_query($con,"select * from combo where combo_id='$cid'")or die(mysqli_error($con));
                         $comboRow = mysqli_fetch_array($comboQuery);
-                        $cname = $comboRow['combo_name'];
+                        $cname = mysqli_num_rows($comboQuery) > 0 ? $comboRow['combo_name'] : "Package does not exist.";
                     } else {
                         $cname = "Custom Package";
                     }

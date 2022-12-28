@@ -188,27 +188,27 @@ INSERT INTO `payment` (`payment_id`, `amount`, `rid`, `payment_date`) VALUES
 --
 
 CREATE TABLE `reservation` (
-  `rid` int(11) NOT NULL,
-  `r_date` date NOT NULL,
-  `r_time` time NOT NULL,
-  `r_last` varchar(30) NOT NULL,
-  `r_first` varchar(30) NOT NULL,
-  `r_contact` varchar(30) NOT NULL,
-  `r_email` varchar(50) NOT NULL,
-  `r_address` varchar(100) NOT NULL,
-  `r_type` varchar(30) NOT NULL,
-  `r_ocassion` varchar(50) NOT NULL,
-  `r_motif` varchar(30) NOT NULL,
-  `r_venue` varchar(100) NOT NULL,
-  `payable` decimal(10,2) NOT NULL,
-  `balance` decimal(10,2) NOT NULL,
-  `r_status` varchar(10) NOT NULL,
-  `date_reserved` date NOT NULL,
-  `r_code` varchar(10) NOT NULL,
-  `pax` int(11) NOT NULL,
+  `rid` int(11),
+  `r_date` date,
+  `r_time` time,
+  `r_last` varchar(30),
+  `r_first` varchar(30),
+  `r_contact` varchar(30),
+  `r_email` varchar(50),
+  `r_address` varchar(100),
+  `r_type` varchar(30),
+  `r_ocassion` varchar(50),
+  `r_motif` varchar(30),
+  `r_venue` varchar(100),
+  `payable` decimal(10,2),
+  `balance` decimal(10,2),
+  `r_status` varchar(10),
+  `date_reserved` date,
+  `r_code` varchar(10),
+  `pax` int(11),
   `combo_id` int(11) REFERENCES combo(`combo_id`),
-  `price` decimal(10,2) NOT NULL,
-  `modeofpayment` varchar(50) NOT NULL
+  `price` decimal(10,2),
+  `modeofpayment` varchar(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
