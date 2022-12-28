@@ -103,7 +103,7 @@ endif;
                 ?>
                 <tr>
                     <td><b>RCode: </b></td>
-                    <td><?php echo $rcode;?></td>
+                    <td><b><?php echo $rcode;?></b></td>
                 </tr>
                 <tr>
                     <td>Name: </td>
