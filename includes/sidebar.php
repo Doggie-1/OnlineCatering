@@ -10,14 +10,14 @@
           <li class="has_sub">
 			<a href="#"><i class="fa fa-calendar"></i> Reservation  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
             <ul>
-              <li><a href="reservation.php">Confirmed Reservations</a></li>
-              <li><a href="pending.php">Pending Reservations</a></li>
-              <li><a href="finished.php">Finished Reservations</a></li>
-              <li><a href="cancelled.php">Cancelled Reservations</a></li>
+              <li><a href="reservation.php">Confirmed </a></li>
+              <li><a href="pending.php">Pending </a></li>
+              <li><a href="finished.php">Finished </a></li>
+              <li><a href="cancelled.php">Cancelled </a></li>
             </ul>
           </li>  
           <li><a href="combo.php"><i class="fa fa-bar-chart-o"></i> Combo</a></li> 
-          <li><a href="order.php"><i class="fa fa-money bgreen"></i> Menu Orders</a></li> 
+          
           <li class="has_sub">
 			<a href="#"><i class="fa fa-file-o"></i> Maintenance  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
             <ul>			
