@@ -8,7 +8,7 @@
 		<li class="open"><a href="dashboard.php"><i class="fa fa-home"></i> <b>Dashboard</b></a>
           </li>
           <li class="has_sub">
-		  <a href="#"><i class="fa fa-calendar"></i> <b>Reservation Status</b> <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+		  <a href="#"><i class="fa fa-calendar"></i> <b>Reservation</b> <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
             <ul>
               <li><a href="pending.php"><b>Pending</b></a></li>
 	      <li><a href="reservation.php"><b>Confirmed</b></a></li>
