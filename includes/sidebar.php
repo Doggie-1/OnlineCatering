@@ -10,10 +10,10 @@
           <li class="has_sub">
 			<a href="#"><i class="fa fa-calendar"></i> Reservation  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
             <ul>
-              <li><a href="reservation.php">Confirmed </a></li>
-              <li><a href="pending.php">Pending </a></li>
-              <li><a href="finished.php">Finished </a></li>
-              <li><a href="cancelled.php">Cancelled </a></li>
+		    <li><a href="reservation.php"><b>Confirmed</b></a></li>
+              <li><a href="pending.php"><b>Pending</b></a></li>
+              <li><a href="finished.php"><b>Finished</b></a></li>
+              <li><a href="cancelled.php"><b>Cancelled</b></a></li>
             </ul>
           </li>  
           <li><a href="combo.php"><i class="fa fa-bar-chart-o"></i> Combo</a></li> 
@@ -21,10 +21,10 @@
           <li class="has_sub">
 			<a href="#"><i class="fa fa-file-o"></i> Maintenance  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
             <ul>			
-              <li><a href="menu.php">Menu</a></li>
-              <li><a href="category.php">Category</a></li>
-              <li><a href="subcategory.php">Subcategory</a></li>
-              <li><a href="user.php">User</a></li>
+              <li><a href="menu.php"><b>Menu</a></b></li>
+              <li><a href="category.php"><b>Category</b></a></li>
+              <li><a href="subcategory.php"><b>Subcategory</b></a></li>
+              <li><a href="user.php"><b>User</b></a></li>
             </ul>
           </li>
           <li><a href="messages.php"><i class="fa fa-envelope"></i> Messages</a></li>     
