@@ -8,7 +8,7 @@ body{
 	line-height: 22px;
 	color: #666;
 	border-top: 3px solid #eee;
-	background:#343434 url("../img/redwall.jpg");  
+	background:#343434 url("../img/cream.png");  
 	padding-top: 37px;
 	-webkit-font-smoothing: antialiased;
 }
@@ -37,7 +37,7 @@ h3{
 
 h4{
 	font-size: 15px;
-	line-height: 15px;
+	line-height: 20px;
 
 }
 
