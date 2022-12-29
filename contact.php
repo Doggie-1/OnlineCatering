@@ -5,7 +5,7 @@
 	<?php include 'menu-tab.php';?>
 
 	
-	<div class="container"><br><br>
+	<div class="container"><br><br><br><br><br><br>
 		<div class="content">
 				<div class="col-md-4">
 					<div class="widget">
@@ -50,7 +50,7 @@
 
 							</div>
 						</div>
-					</div><br><br>		
+					</div><br><br><br><br><br><br>		
 				</div>
 				<div class = "col-md-8">
 					<div class = "widget">
