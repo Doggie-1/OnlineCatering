@@ -9,7 +9,10 @@
 <!-- Main content starts -->
 
 <div class="content">
-  <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+	    <!-- Matter -->
+
 	    <div class="matter">
         <div class="container"><br><br>
           <div class="row">
@@ -130,7 +133,7 @@
 
    <!-- Mainbar ends -->
    <div class="clearfix"></div>
-  </div>
+
 </div>
 <!-- Content ends -->
 
