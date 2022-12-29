@@ -106,7 +106,7 @@ endif;
                     <td><b><?php echo $rcode;?></b></td>
                 </tr>
                 <tr>
-                    <td><h4>Name: </h4></td>
+                    <td><b><h4>Name: </h4></b></td>
                     <td><h4><?php echo $last." ,".$first;?></h4></td>
                 </tr>
                 <tr>
@@ -165,11 +165,11 @@ endif;
             ?>
                 <div>
 	                <h4 style="color: #7d1e1b;"><?php echo $cname;?></h4>
-	                <span>No. of persons: <?php echo $row['pax'];?> * <?php echo $row['price'];?> = <?php echo $row['payable'];?></span>
+	                <span><b>No. of persons:</b> <b><?php echo $row['pax'];?> * <?php echo $row['price'];?> = <?php echo $row['payable'];?></b></span>
 	                <div style="margin-left: -25px;">
 	                    <ul>
 	                        <?php while($row1 = mysqli_fetch_array($query1)) {?>
-	                            <b><h3><li><?php echo  $row1['menu_name'];?></li></h3></b>
+	                            <b><h4><li><?php echo  $row1['menu_name'];?></li></h4></b>
 	                        <?php } ?>
 	                    </ul>
 	                </div>
