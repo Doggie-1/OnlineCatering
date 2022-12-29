@@ -103,47 +103,47 @@ endif;
                 ?>
                 <tr>
                     <td><b>RCode: </b></td>
-                    <td><b><?php echo $rcode;?></b></td>
+                    <td><h5><?php echo $rcode;?></h5></td>
                 </tr>
                 <tr>
-                    <td><b><h4>Name: </h4></b></td>
-                    <td><h4><?php echo $last." ,".$first;?></h4></td>
+                    <td><b>Name: </b></td>
+                    <td><h5><?php echo $last." ,".$first;?></h5></td>
                 </tr>
                 <tr>
-                    <td>Contact #: </td>
-                    <td><?php echo $contact;?></td>
+                    <td><b>Contact #: </b></td>
+                    <td><h5><?php echo $contact;?></h5></td>
                 </tr>
                 <tr>
-                    <td>Address: </td>
-                    <td><?php echo $address;?></td>
+                    <td><b>Address: </b></td>
+                    <td><h5><?php echo $address;?></h5></td>
                 </tr>
                 <tr>
-                    <td>Reservation Status: </td>
-                    <td><?php echo $status;?></td>
+                    <td><b>Reservation Status: </b></td>
+                    <td><h5><?php echo $status;?></h5></td>
                 </tr>
                 <tr>
-                    <td>Motif: </td>
-                    <td><?php echo $motif;?></td>
+                    <td><b>Motif: </b></td>
+                    <td><h5><?php echo $motif;?></h5></td>
                 </tr>
                 <tr>
-                    <td>Reservation Date: </td>
-                    <td><?php echo date("M d, Y",strtotime($date));?></td>
+                    <td><b>Reservation Date: </b></td>
+                    <td><h5><?php echo date("M d, Y",strtotime($date));?></h5></td>
                 </tr>
                 <tr>
-                    <td>Reservation Type: </td>
-                    <td><?php echo $type;?></td>
+                    <td><b>Reservation Type: </b></td>
+                    <td><h5><?php echo $type;?></h5></td>
                 </tr>
                 <tr>
-                    <td>Venue for the Event: </td>
-                    <td><?php echo $venue;?></td>
+                    <td><b>Venue for the Event: </b></td>
+                    <td><h5><?php echo $venue;?></h5></td>
                 </tr>
                 <tr>
-                    <td>Total Payable: </td>
-                    <td><?php echo $payable;?></td>
+                    <td><b>Total Payable: </b></td>
+                    <td><h5><?php echo $payable;?></h5></td>
                 </tr>
                 <tr>
-                    <td>Balance: </td>
-                    <td><?php echo $balance;?></td>
+                    <td><b>Balance: </b></td>
+                    <td><h5><?php echo $balance;?></h5></td>
                 </tr>
             </table>
         </div>
@@ -165,11 +165,11 @@ endif;
             ?>
                 <div>
 	                <h4 style="color: #7d1e1b;"><?php echo $cname;?></h4>
-	                <span><b>No. of persons:</b> <b><?php echo $row['pax'];?> * <?php echo $row['price'];?> = <?php echo $row['payable'];?></b></span>
+	                <span><h5>No. of persons:</h5> <h5><?php echo $row['pax'];?> * <?php echo $row['price'];?> = <?php echo $row['payable'];?></h5></span>
 	                <div style="margin-left: -25px;">
 	                    <ul>
 	                        <?php while($row1 = mysqli_fetch_array($query1)) {?>
-	                            <b><h4><li><?php echo  $row1['menu_name'];?></li></h4></b>
+	                            <h5><li><?php echo  $row1['menu_name'];?></li></h5>
 	                        <?php } ?>
 	                    </ul>
 	                </div>
