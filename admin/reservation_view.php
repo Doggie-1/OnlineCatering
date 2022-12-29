@@ -46,10 +46,10 @@ endif;
     .grid-container {
         display: grid;
         grid-template-columns: auto auto;
-        padding: 10px;
+        padding: 20px;
     }
     .grid-item {
-        padding: 20px;
+        padding: 30px;
     }
   </style>  
 </head>
@@ -103,47 +103,47 @@ endif;
                 ?>
                 <tr>
                     <td><b>RCode: </b></td>
-                    <td><h5><?php echo $rcode;?></h5></td>
+                    <td><h4><?php echo $rcode;?></h4></td>
                 </tr>
                 <tr>
                     <td><b>Name: </b></td>
-                    <td><h5><?php echo $last." ,".$first;?></h5></td>
+                    <td><h4><?php echo $last." ,".$first;?></h4></td>
                 </tr>
                 <tr>
                     <td><b>Contact #: </b></td>
-                    <td><h5><?php echo $contact;?></h5></td>
+                    <td><h4><?php echo $contact;?></h4></td>
                 </tr>
                 <tr>
                     <td><b>Address: </b></td>
-                    <td><h5><?php echo $address;?></h5></td>
+                    <td><h4><?php echo $address;?></h4></td>
                 </tr>
                 <tr>
                     <td><b>Reservation Status: </b></td>
-                    <td><h5><?php echo $status;?></h5></td>
+                    <td><h4><?php echo $status;?></h4></td>
                 </tr>
                 <tr>
                     <td><b>Motif: </b></td>
-                    <td><h5><?php echo $motif;?></h5></td>
+                    <td><h4><?php echo $motif;?></h4></td>
                 </tr>
                 <tr>
                     <td><b>Reservation Date: </b></td>
-                    <td><h5><?php echo date("M d, Y",strtotime($date));?></h5></td>
+                    <td><h4><?php echo date("M d, Y",strtotime($date));?></h4></td>
                 </tr>
                 <tr>
                     <td><b>Reservation Type: </b></td>
-                    <td><h5><?php echo $type;?></h5></td>
+                    <td><h4><?php echo $type;?></h4></td>
                 </tr>
                 <tr>
                     <td><b>Venue for the Event: </b></td>
-                    <td><h5><?php echo $venue;?></h5></td>
+                    <td><h4><?php echo $venue;?></h4></td>
                 </tr>
                 <tr>
                     <td><b>Total Payable: </b></td>
-                    <td><h5><?php echo $payable;?></h5></td>
+                    <td><h4><?php echo $payable;?></h4></td>
                 </tr>
                 <tr>
                     <td><b>Balance: </b></td>
-                    <td><h5><?php echo $balance;?></h5></td>
+                    <td><h4><?php echo $balance;?></h4></td>
                 </tr>
             </table>
         </div>
@@ -165,11 +165,11 @@ endif;
             ?>
                 <div>
 	                <h4 style="color: #7d1e1b;"><?php echo $cname;?></h4>
-	                <span><h5>No. of persons:</h5> <h5><?php echo $row['pax'];?> * <?php echo $row['price'];?> = <?php echo $row['payable'];?></h5></span>
+	                <span><h4>No. of persons:</h4> <h4><?php echo $row['pax'];?> * <?php echo $row['price'];?> = <?php echo $row['payable'];?></h4></span>
 	                <div style="margin-left: -25px;">
 	                    <ul>
 	                        <?php while($row1 = mysqli_fetch_array($query1)) {?>
-	                            <h5><li><?php echo  $row1['menu_name'];?></li></h5>
+	                            <h4><li><?php echo  $row1['menu_name'];?></li></h4>
 	                        <?php } ?>
 	                    </ul>
 	                </div>
