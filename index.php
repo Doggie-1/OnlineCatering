@@ -12,12 +12,12 @@
 							<?php include 'slider.php';?>
 						</div>						
 					</div>				
-				</div>
+				</div><br><br>
 				<?php include('right-sidebar.php');?>		
 			
 			
 					
-			</div><br>
+			</div>
 		</div>
   </div>
 		
