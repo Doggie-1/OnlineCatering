@@ -1,1 +1,1 @@
-Lee Pipez's Catering Services
+Kirby's Magic Kan-anan Catering Services
