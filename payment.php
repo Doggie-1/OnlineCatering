@@ -9,9 +9,10 @@ endif;
 	<?php include 'navbar.php';?>
 	<?php include 'menu-tab.php';?>
 	
-		<div class = "content">
+		<div class = "container"><br><br><br><br><br><br><br><br>
+      <div class = "content" style="height: 65vh;">
 			<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div class = "col-md-9 col-lg-9">
+				<div class = "col-md-12 col-lg-12">
 					<div class="widget wgreen">
                 
                 <div class="widget-head">
@@ -109,12 +110,13 @@ endif;
                               </form>
                   </div>
                 </div>
+          </div>
                   <div class="widget-foot">
                     <!-- Footer goes here -->
                   </div>
               </div>		
 				</div>
-				<?php include('right-sidebar.php');?>
+				
 				
 			</div>	
 		</div>
