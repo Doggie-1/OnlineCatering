@@ -3,10 +3,11 @@
 <body>
 	<?php include 'navbar.php';?>
 	<?php include 'menu-tab.php';?>
-  
-  <div class = "content">
+
+  <div class = "container">
+    <div class = "content">
 			<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div class = "col-md-9 col-lg-9 image-content"><br><br>
+				<div class = "col-md-9 col-lg-9 image-content"><br><br><br><br><br>
 					<div class = "widget">
 						<div class = "widget-content">
 							<?php include 'slider.php';?>
@@ -16,7 +17,7 @@
 				<?php include('right-sidebar.php');?>		
 			
 		</div>
-  </div>
+  </div><br><br>
 
 				
 	<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -33,6 +34,7 @@
 	<br><br><br>
 			</div>
 	</div>
+</div>
 		
 		
 		
