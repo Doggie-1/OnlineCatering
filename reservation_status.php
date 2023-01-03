@@ -155,8 +155,8 @@ endif;
         </div><!--col 9-->
        
         
-      </div>
-    </div><br><br>
+      </div>  
+    </div>
 <?php include 'footer.php';?>   
 <?php include 'script.php';?>
 <script>
