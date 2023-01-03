@@ -17,7 +17,7 @@ body{
 h1,h2,h3,h4,h5,h6{
 	padding: 2px 0px;
 	margin: 2px 0px;
-	color: #777;
+	color: #b11229;
 }
 
 h2{
@@ -26,13 +26,16 @@ h2{
 }
 
 h3{
-	font-size: 25px;
+	font-size: 35px;
 	line-height: 23px;
+	font-family: garamond;
+	font-style: italic;
 }
 
 h4{
 	font-size: 20px;
 	line-height: 20px;
+	font-family: garamond;
 }
 
 h5{
