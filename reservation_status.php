@@ -75,8 +75,7 @@ endif;
 	                    $query1 = mysqli_query($con, "SELECT * FROM custom_details natural join menu WHERE reservation_id='$id'");
 	                }
 	                $row1 = mysqli_fetch_array($query1);
-
-                    $cname = array_key_exists("combo_name",$row1) ? $row1['combo_name'] : "Custom Package";
+                    $cname = $cid ? $row1['combo_name'] : "Custom Package";
                 ?>
                 <tr>
                     <td>RCode: </td>
@@ -150,7 +149,7 @@ endif;
                     while($row12=mysqli_fetch_array($query1))
                     {
                 ?>
-                    <li><?php echo  $row12['menu_name'];?></li>
+                    <li><?php echo array_key_exists("menu_name",$row12) ? $row12['menu_name'] : "None";?></li>
                 <?php } ?>
             </div>
         </div>
