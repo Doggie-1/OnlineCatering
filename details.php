@@ -236,8 +236,7 @@ javascript:window.history.forward(1);
             let priceList = document.getElementById("priceList");
             let li = document.createElement("li");
             li.setAttribute('id', element.getAttribute('data-id'));
-            li.innerText = element.getAttribute('value') + " - ";
-            li.appendChild(document.createTextNode(element.getAttribute('data-id')));
+            li.appendChild(document.createTextNode(element.getAttribute('data-id') + " - " + element.getAttribute('value')));
             list.appendChild(li);
             if (!menuId) {
                 menuId += element.getAttribute('data-code');
