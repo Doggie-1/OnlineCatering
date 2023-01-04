@@ -156,7 +156,7 @@ endif;
                 }
                 $row1 = mysqli_fetch_array($query1);
 
-                $cname = $cid && (mysqli_num_rows($query1) > 0)? $row1['combo_name'] : "Custom Package";
+                $cname = $cid && (mysqli_num_rows($query1) > 0) ? $row1['combo_name'] : "Custom Package";
                 if (!(mysqli_num_rows($query1) > 0)) {
             ?>
                 <h4 style="color: #7d1e1b;">Package does not Exist</h4>

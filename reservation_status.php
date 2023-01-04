@@ -54,6 +54,7 @@ endif;
                     $query=mysqli_query($con,"select * from reservation where r_code='$rcode'")or die(mysqli_error($con));
                     $row=mysqli_fetch_array($query);
                     $rcode=$row['r_code'];
+                    $id=$row['rid'];
                     $first=$row['r_first'];
                     $last=$row['r_last'];
                     $contact=$row['r_contact'];
@@ -68,12 +69,14 @@ endif;
                     $time=$row['r_time'];
                     $type=$row['r_type'];
                     $cid=$row['combo_id'];
-                    if ($cid) {
-                        $query1 = mysqli_query($con,"select * from combo where combo_id='$cid'")or die(mysqli_error($con));
-                        $row1 = mysqli_fetch_array($query1);
-                    }
+	                if ($cid) {
+	                    $query1 = mysqli_query($con,"select * from combo where combo_id='$cid'")or die(mysqli_error($con));
+	                } else {
+	                    $query1 = mysqli_query($con, "SELECT * FROM custom_details natural join menu WHERE reservation_id='$id'");
+	                }
+	                $row1 = mysqli_fetch_array($query1);
 
-                    $cname = !empty($row1) ? $row1['combo_name'] : "Custom Package";
+                    $cname = array_key_exists("combo_name",$row1) ? $row1['combo_name'] : "Custom Package";
                 ?>
                 <tr>
                     <td>RCode: </td>
@@ -138,12 +141,17 @@ endif;
                 <h4><?php echo $cname;?></h4>
                 <span>No. of persons: <?php echo $row['pax'];?> * <?php echo $row['price'];?> = <?php echo $row['payable'];?></span>
                 <?php
-                    $query1=mysqli_query($con,"select * from combo_details natural join menu where combo_id='$cid'")or die(mysqli_error($con));
-                    while($row1=mysqli_fetch_array($query1))
+	                if ($cid) {
+	                    $query1 = mysqli_query($con,"select * from combo where combo_id='$cid'")or die(mysqli_error($con));
+	                } else {
+	                    $query1 = mysqli_query($con, "SELECT * FROM custom_details natural join menu WHERE reservation_id='$id'");
+	                }
+
+                    while($row12=mysqli_fetch_array($query1))
                     {
                 ?>
-                    <li><?php echo  $row1['menu_name'];?></li>
-                <?php }?>
+                    <li><?php echo  $row12['menu_name'];?></li>
+                <?php } ?>
             </div>
         </div>
     </div>

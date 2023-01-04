@@ -11,7 +11,7 @@ include('includes/dbcon.php');
 
 	$string="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	$code="";
-	$limit=10;
+	$limit=9;
 	$i=0;
 	while($i<=$limit)
 	{
