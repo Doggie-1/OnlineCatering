@@ -8,7 +8,7 @@ body{
 	line-height: 22px;
 	color: #666;
 	border-top: 3px solid #eee;
-	background:#343434 url("../img/flower.png") repeat;  
+	background:#343434 url("../img/cream.png") repeat;  
 	padding-top: 37px;
 	-webkit-font-smoothing: antialiased;
 }
@@ -17,7 +17,7 @@ body{
 h1,h2,h3,h4,h5,h6{
 	padding: 2px 0px;
 	margin: 2px 0px;
-	color: #777;
+	color: #b11229;
 }
 
 h2{
@@ -26,13 +26,16 @@ h2{
 }
 
 h3{
-	font-size: 25px;
+	font-size: 35px;
 	line-height: 23px;
+	font-family: garamond;
+	font-style: italic;
 }
 
 h4{
 	font-size: 20px;
 	line-height: 20px;
+	font-family: garamond;
 }
 
 h5{
@@ -492,7 +495,7 @@ text-decoration:none;
 header{
 	border-top: 1px solid #ccc;
 	padding: 25px 0px 15px 0px;
-	background: #fafafa url("../img/flower.png") repeat;
+	background: #fafafa url("../img/cream.png") repeat;
 	border-bottom: 1px solid #ddd;
 }
 
@@ -753,7 +756,7 @@ header .header-data .hdata em{
 	background:#f3f3f3;
 }
 
-.sidebar #nav li ul { display: none; background: #efefef url("../img/flower.png") repeat; }
+.sidebar #nav li ul { display: none; background: #efefef url("../img/cream.png") repeat; }
 
 .sidebar #nav li ul li a { 
   display: block; 

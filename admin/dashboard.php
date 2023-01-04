@@ -128,7 +128,7 @@ endif;
 
        <!-- Matter -->
 
-      <div class="matter">
+      <div class="matter"><br>
         <div class="container">
           <div class="row">
 <?php
@@ -167,6 +167,7 @@ include('../includes/dbcon.php');
         </div>
     </div>
     </div>  <!--row-->
+    <br><br>
     <div class="table-container">
         <table>
             <thead>

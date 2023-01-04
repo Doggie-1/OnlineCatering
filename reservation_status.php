@@ -17,10 +17,10 @@ endif;
 <body>
   <?php include 'navbar.php';?>
   <?php include 'menu-tab.php';?>
-  
+
+  <div class="container"><br><br>
     <div class = "content">
-      <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class = "col-md-9 col-lg-9">
+        <div class = "col-md-12 col-lg-12">
           <div class="widget wgreen">
                 
                 <div class="widget-head">
@@ -161,7 +161,7 @@ endif;
                 </div>
           </div><!--widget-->          
         </div><!--col 9-->
-        <?php include('right-sidebar.php');?>
+       
         
       </div>  
     </div>
