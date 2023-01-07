@@ -14,7 +14,7 @@
 	    <!-- Matter -->
 
 	    <div class="matter">
-        <div class="container" style="height: 80vh;"><br><br><br><br><br>
+        <div class="container" style="height: 80vh;"><br>
           <div class="row">
             <div class="col-md-8">
               <div class="widget">
