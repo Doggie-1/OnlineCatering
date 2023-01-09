@@ -53,7 +53,7 @@ javascript:window.history.forward(1);
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label">Time of Event</label>
                                   <div class="col-lg-5">
-                                    <div id="datetimepicker" class="input-append input-group dtpicker">
+                                    <div id="datetimepicker" class="input-append input-group dtpicker" required>
                                      
 									  <input data-format="hh:mm A" class="form-control" type="time" name="time" id="datepicker" required="true">
                                       <span class="input-group-addon">
@@ -66,7 +66,7 @@ javascript:window.history.forward(1);
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label">Motif</label>
                                   <div class="col-lg-5">
-                                    <input type="text" class="form-control" placeholder="Write theme/motif" name="motif">
+                                    <input type="text" class="form-control" placeholder="Write theme/motif" name="motif" required>
                                   </div>
                                 </div>
 
@@ -87,13 +87,13 @@ javascript:window.history.forward(1);
                                 <div class="form-group" id="others">
                                   <label class="col-lg-2 control-label"></label>
                                   <div class="col-lg-5">
-                                    <input type="text" class="form-control" placeholder="Please specify" min="1" name="others">
+                                    <input type="text" class="form-control" placeholder="Please specify" min="1" name="others" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label">No. of Pax</label>
                                   <div class="col-lg-5">
-                                    <input type="number" class="form-control" placeholder="No. of Pax" min="1" name="pax">
+                                    <input type="number" class="form-control" placeholder="No. of Pax" min="1" name="pax" required>
                                   </div>
                                 </div>
                                <div class="form-group">
