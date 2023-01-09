@@ -87,7 +87,7 @@ javascript:window.history.forward(1);
                                 <div class="form-group" id="others">
                                   <label class="col-lg-2 control-label"></label>
                                   <div class="col-lg-5">
-                                    <input type="text" class="form-control" placeholder="Please specify" min="1" name="others" required>
+                                    <input type="text" class="form-control" placeholder="Please specify" min="1" name="others">
                                   </div>
                                 </div>
                                 <div class="form-group">
