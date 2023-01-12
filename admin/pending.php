@@ -264,22 +264,6 @@ include('../includes/dbcon.php');
      
 <?php }?>
                     </tbody>
-                    <tfoot>
-                      <tr>
-                        <tr>
-                        <th>RCode</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Contact</th>
-                        <th>Event</th>
-                        <th>Date</th>
-                        <th>Venue</th>
-                        <th>Balance</th>
-                        <th>Mode of Payment</th>
-                        <th>Action</th>
-                      </tr>
-                      </tr>
-                    </tfoot>
                   </table>
                   <div class="clearfix"></div>
                 </div>
