@@ -4,7 +4,7 @@
 	<?php include 'navbar.php';?>
 	<?php include 'menu-tab.php';?>
 	
-      <div class="container"><br><br><br><br><br>
+      <div class="container"><br>
 		    <div class ="content" style="height: 75vh;">
 					<div class="widget wgreen">
                 
@@ -81,6 +81,7 @@
           </div><br>
         </div>		
 		  </div>
+      <br><br><br><br><br>
 
 <?php include 'footer.php';?> 	
 <?php include 'script.php';?>
