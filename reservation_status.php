@@ -18,7 +18,7 @@ endif;
   <?php include 'navbar.php';?>
   <?php include 'menu-tab.php';?>
 
-  <div class="container"><br><br>
+  <div class="container"><br>
     <div class = "content">
         <div class = "col-md-12 col-lg-12">
           <div class="widget wgreen">
@@ -164,6 +164,7 @@ endif;
         
       </div>  
     </div>
+    <br><br><br><br>
 <?php include 'footer.php';?>   
 <?php include 'script.php';?>
 <script>
