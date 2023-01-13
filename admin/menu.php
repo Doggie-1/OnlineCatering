@@ -97,13 +97,13 @@ endif;
                   <table cellpadding="0" cellspacing="0" border="0" id="data-table" width="100%">
                     <thead>
                       <tr>
-                        <th>Image</th>
-                        <th>Menu Name</th>
-                        <th>Category</th>
-                        <th>Subcategory</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Action</th>
+                        <th><b>Image</b></th>
+                        <th><b>Menu Name</b></th>
+                        <th><b>Category</b></th>
+                        <th><b>Subcategory</b></th>
+                        <th><b>Description</b></th>
+                        <th><b>Price</b></th>
+                        <th><b>Action</b></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -263,17 +263,6 @@ include('../includes/dbcon.php');
 <!--end modal-->                     
 <?php }?>
                     </tbody>
-                    <tfoot>
-                      <tr>
-                        <th>Image</th>
-                        <th>Menu Name</th>
-                        <th>Category</th>
-                        <th>Subcategory</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Action</th>
-                      </tr>
-                    </tfoot>
                   </table>
                   <div class="clearfix"></div>
                 </div>
