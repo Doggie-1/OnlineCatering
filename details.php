@@ -33,46 +33,47 @@ javascript:window.history.forward(1);
                     <br>
                     <!-- Form starts.  -->
                      <form class="form-horizontal" role="form" action="details_save.php" method="post">
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label">Venue</label>
-                                    <div class="col-lg-5">
-                                    <textarea class="form-control" id="venue" name="venue" rows="5" placeholder="Complete Address of venue" required
-                                        onfocusout="checkLocation()"></textarea>
-                                    </div>
-                                </div>    
-
-                                <div class="form-group">
-                                  <label class="col-lg-2 control-label">Date of Event</label>
-                                  <div class="col-lg-5">
-                                    <input type="text" id="datepicker" class="form-control" name="date" required>
-                                    <span class = "label label-warning">Check if date is available</span>
-                                  </div>
+                        
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Venue</label>
+                                <div class="col-lg-4">
+                                    <textarea class="form-control" id="venue" name="venue" rows="2" placeholder="Complete Address of venue" required
+                                    onfocusout="checkLocation()"></textarea>
                                 </div>
 
+                                <label class="col-lg-1 control-label">Date of Event</label>
+                                <div class="col-lg-4">
+                                    <input type="text" id="datepicker" class="form-control" name="date" required>
+                                    <span class = "label label-warning">Check if date is available</span>
+                                </div>   
+                            </div>    
 
-                                <div class="form-group">
-                                  <label class="col-lg-2 control-label">Time of Event</label>
-                                  <div class="col-lg-5">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Time of Event</label>
+                                <div class="col-lg-4">
                                     <div id="datetimepicker" class="input-append input-group dtpicker" required>
-                                     
 									  <input data-format="hh:mm A" class="form-control" type="time" name="time" id="datepicker" required="true">
                                       <span class="input-group-addon">
                                         <i data-time-icon="fa fa-clock-o" data-date-icon="fa fa-calendar" class="fa fa-clock-o"></i>
                                       </span>
                                     </div>
-                                  </div>
                                 </div>
-
-                                <div class="form-group">
-                                  <label class="col-lg-2 control-label">Motif</label>
-                                  <div class="col-lg-5">
+                                
+                                <label class="col-lg-1 control-label">Motif</label>
+                                <div class="col-lg-4">
                                     <input type="text" class="form-control" placeholder="Write theme/motif" name="motif" required>
-                                  </div>
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                  <label class="col-lg-2 control-label">Occasion</label>
-                                  <div class="col-lg-5">
+
+                            <div class="form-group">
+                                    <label class="col-lg-2 control-label">No. of Pax</label>
+                                    <div class="col-lg-4">
+                                        <input type="number" class="form-control" placeholder="No. of Pax" min="1" name="pax" required>
+                                    </div>
+
+                                <label class="col-lg-1 control-label">Occasion</label>
+                                  <div class="col-lg-4">
                                     <select class="form-control select2 " id="exampleSelect1" name="ocassion" placeholder="Select occasion" required
                                         onchange="show();">
                                       <option value="Baptism">Baptism</option>
@@ -83,22 +84,19 @@ javascript:window.history.forward(1);
                                       <option value="Others">Others</option>
                                     </select>
                                   </div>
-                                </div>
+                            </div>
+
                                 <div class="form-group" id="others">
-                                  <label class="col-lg-2 control-label"></label>
-                                  <div class="col-lg-5">
+                                  <label class="col-lg-7 control-label"></label>
+                                  <div class="col-lg-4">
                                     <input type="text" class="form-control" placeholder="Please specify" min="1" name="others">
                                   </div>
                                 </div>
-                                <div class="form-group">
-                                  <label class="col-lg-2 control-label">No. of Pax</label>
-                                  <div class="col-lg-5">
-                                    <input type="number" class="form-control" placeholder="No. of Pax" min="1" name="pax" required>
-                                  </div>
-                                </div>
-                               <div class="form-group">
-    <label class="col-lg-2 control-label"></label>
-        <div class="col-lg-5">
+                                <br>
+
+<div class="form-group">
+    <label class="col-lg-1 control-label"></label>
+        <div class="col-lg-6">
             <?php
             include('includes/dbcon.php');
                 $query=mysqli_query($con,"select * from combo order by combo_name")or die(mysqli_error($con));
@@ -181,7 +179,7 @@ javascript:window.history.forward(1);
             </div>
         </div>
         <div class="form-group">
-            <div class="col-lg-offset-2 col-lg-6">
+            <div class="col-lg-offset-1 col-lg-5">
                 <button type="reset" class="btn btn-sm btn-default">Clear</button>
                 <button type="submit" class="btn btn-sm btn-primary">Next</button>
             </div>
