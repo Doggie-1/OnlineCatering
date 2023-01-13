@@ -11,7 +11,7 @@ javascript:window.history.forward(1);
 <body>
 	<?php include 'navbar.php';?>
 	<?php include 'menu-tab.php';?>
-	<div class="container">
+	<div class="container"><br>
 		<div class = "content">
 			<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
         
@@ -198,7 +198,7 @@ javascript:window.history.forward(1);
 
       </div>  
 			</div>	
-		</div>
+		</div><br><br><br><br> 
 <?php include 'footer.php';?> 	
 <?php include 'script.php';?>
 <script>
