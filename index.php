@@ -30,7 +30,7 @@
 					Wanting to give their clients service and a catering experience like no other, Kirby's Magic Kan-anan Catering has always strived to provide something new to their patrons. This is evident in the constantly expanding menus and packages that they offer.
           Kirby's Magic Kan-anan Catering believes that we have to continuously learn new approaches in providing for the needs
 					</p>
-	        <br><br><br>
+	        <br><br><br><br><br>
 			</div>
 	  </div>
 </div>
