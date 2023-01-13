@@ -15,12 +15,11 @@
 					</div>				
 				</div><br><br>
 				<?php include('right-sidebar.php');?>		
-			
-		</div>
-  </div><br><br>
+		  </div>
+    </div><br><br>
 
 				
-	<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	  <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		  <div class = "col-lg-12">
 				<h1 class = "page-title center" style = "padding-top:50px;">Kirby's Catering Statement</h1>
 					<p class = "body-text">The Catering Services offers great satisfaction and awesome experience not only in food but in all of their services that guarantee the customers needs. 
@@ -31,10 +30,9 @@
 					Wanting to give their clients service and a catering experience like no other, Kirby's Magic Kan-anan Catering has always strived to provide something new to their patrons. This is evident in the constantly expanding menus and packages that they offer.
           Kirby's Magic Kan-anan Catering believes that we have to continuously learn new approaches in providing for the needs
 					</p>
-          
-	<br><br><br><br><br>
+	        <br><br><br>
 			</div>
-	</div>
+	  </div>
 </div>
 		
 		
