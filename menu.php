@@ -135,6 +135,7 @@
    <div class="clearfix"></div>
 
 </div>
+<br><br><br><br>
 <!-- Content ends -->
 
 <?php include 'footer.php';?>
