@@ -146,7 +146,7 @@ include('../includes/dbcon.php');
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
               <h4 class="modal-title">Update Category</h4>
             </div>
-            <div class="modal-body" style="height:300px">
+            <div class="modal-body" style="height:300px; overflow:auto">
               <!--start form-->
               <form class="form-horizontal" method="post" action="menu_update.php" enctype='multipart/form-data'>
                   <!-- Title -->
