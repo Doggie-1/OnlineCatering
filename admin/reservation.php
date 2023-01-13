@@ -96,17 +96,17 @@ endif;
                   <table cellpadding="0" cellspacing="0" border="0" id="data-table" width="100%">
                     <thead>
                       <tr>
-                        <th>RCode</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Contact</th>
-                        <th>Event</th>
-                        <th>Date</th>
-                        <th>Venue</th>
+                        <th><b>RCode</b></th>
+                        <th><b>Last Name</b></th>
+                        <th><b>First Name</b></th>
+                        <th><b>Contact</b></th>
+                        <th><b>Event</b></th>
+                        <th><b>Date</b></th>
+                        <th><b>Venue</b></th>
                         <th></th>
-                        <th>Balance</th>
-                        <th>Mode of Payment</th>
-                        <th>Action</th>
+                        <th><b>Balance</b></th>
+                        <th><b>Mode of Payment</b></th>
+                        <th><b>Action</b></th>
                       </tr>
                     </thead>
                     <tbody>
