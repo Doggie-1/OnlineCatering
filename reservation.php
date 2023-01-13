@@ -5,7 +5,7 @@
 	<?php include 'menu-tab.php';?>
 	
       <div class="container"><br>
-		    <div class ="content" style="height: 75vh;">
+		    <div class ="content" style="height: 75vh">
 					<div class="widget wgreen">
                 
               <div class="widget-head">
@@ -21,41 +21,41 @@
             <form class="form-horizontal" role="form" action="reservation_save.php" method="post">
                               
                           <div class="form-group">
-                              <label class="col-lg-2 control-label">First Name</label>
+                              <label class="col-lg-4 control-label">First Name</label>
                                   <div class="col-lg-5">
                                     <input type="text" class="form-control" placeholder="First Name" name="first" required>
                                   </div>
                           </div>
                                 
                           <div class="form-group">
-                              <label class="col-lg-2 control-label">Last Name</label>
+                              <label class="col-lg-4 control-label">Last Name</label>
                                   <div class="col-lg-5">
                                     <input type="text" class="form-control" placeholder="Last Name" name="last" required>
                                   </div>
                           </div>
 
                           <div class="form-group">
-                              <label class="col-lg-2 control-label">Address</label>
+                              <label class="col-lg-4 control-label">Address</label>
                                   <div class="col-lg-5">
                                     <textarea class="form-control" rows="8" placeholder="Complete Address" name="address" required></textarea>
                                   </div>
                           </div>    
 
                           <div class="form-group">
-                              <label class="col-lg-2 control-label">Contact #</label>
+                              <label class="col-lg-4 control-label">Contact #</label>
                                   <div class="col-lg-5">
                                     <input type="text" class="form-control" placeholder="Contact #" name="contact" required>
                                   </div>
                           </div>
                                 
                           <div class="form-group">
-                              <label class="col-lg-2 control-label">Email Address</label>
+                              <label class="col-lg-4 control-label">Email Address</label>
                                   <div class="col-lg-5">
                                     <input type="email" class="form-control" placeholder="Email Address" name="email" required>
                                   </div>
                           </div>
 								  <div class="form-group">
-                      <label class="col-lg-2 control-label"></label>
+                      <label class="col-lg-4 control-label"></label>
                           <div class="col-lg-5">
                               <label class="checkbox-inline">
                                   <input type="checkbox" id="inlineCheckbox1" value="option1" required> I agree to the <a href="#facilities" data-toggle="modal">terms and condtion</a> of the Kirby's Catering
@@ -65,7 +65,7 @@
 
 
                   <div class="form-group">
-                        <div class="col-lg-offset-2 col-lg-6">
+                        <div class="col-lg-offset-4 col-lg-5">
                             <button type="reset" class="btn btn-sm btn-default">Clear</button>
                             <button type="submit" class="btn btn-sm btn-primary">Next</button>
                                     
