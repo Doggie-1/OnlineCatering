@@ -92,7 +92,15 @@ javascript:window.history.forward(1);
                                     <input type="text" class="form-control" placeholder="Please specify" min="1" name="others">
                                   </div>
                                 </div>
-                                <br>
+                                <br><br>
+       
+                <div class="form-group">
+                    <label class="col-lg-1 control-label"></label>
+                    <div class="col-lg-9">
+                      <b style="color:green">Reminder: For the custom, just click the food listed inside the package to display in Custom Package with it's price.</b>
+                    </div>
+                </div>
+                    
 
 <div class="form-group">
     <label class="col-lg-1 control-label"></label>
