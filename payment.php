@@ -10,7 +10,7 @@ endif;
 	<?php include 'menu-tab.php';?>
 	
 		<div class = "container"><br><br><br><br><br><br><br><br>
-      <div class = "content" style="height: 65vh;">
+      <div class = "content" style="height: 80vh;">
 			<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class = "col-md-12 col-lg-12">
 					<div class="widget wgreen">
