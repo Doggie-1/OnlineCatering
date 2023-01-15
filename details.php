@@ -97,7 +97,7 @@ javascript:window.history.forward(1);
                 <div class="form-group">
                     <label class="col-lg-1 control-label"></label>
                     <div class="col-lg-9">
-                      <b style="color:green">Reminder: For the custom, just click the food listed inside the package to display in Custom Package with it's price.</b>
+                      <b style="color:green">Reminder: For the custom, simply click the food item listed within the package to display it with its price in the Custom Package.</b>
                     </div>
                 </div>
                     
