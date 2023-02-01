@@ -100,6 +100,12 @@ endif;
                     $status=$row['r_status'];
                     $motif=$row['r_motif'];
                     $cid=$row['combo_id'];
+                    if ($cid) {
+                        $query1 = mysqli_query($con,"select * from combo where combo_id='$cid'")or die(mysqli_error($con));
+                        $row1 = mysqli_fetch_array($query1);
+                    }
+
+                    $cname = !empty($row1) ? $row1['combo_name'] : "Custom Package";
                 ?>
                 <tr>
                     <td><b>RCode: </b></td>
@@ -150,13 +156,12 @@ endif;
         <div class="grid-item">
             <?php
                 if ($cid) {
-                    $query1 = mysqli_query($con,"select * from combo natural join menu where combo_id='$cid'")or die(mysqli_error($con));
+                    $query1 = mysqli_query($con,"select * from combo_details natural join menu where combo_id='$cid'")or die(mysqli_error($con));
                 } else {
                     $query1 = mysqli_query($con, "SELECT * FROM custom_details natural join menu WHERE reservation_id='$id'");
                 }
                 $row1 = mysqli_fetch_array($query1);
 
-                $cname = $cid && (mysqli_num_rows($query1) > 0) ? $row1['combo_name'] : "Custom Package";
                 if (!(mysqli_num_rows($query1) > 0)) {
             ?>
                 <h4 style="color: #7d1e1b;">Package does not Exist</h4>
