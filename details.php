@@ -124,8 +124,9 @@ javascript:window.history.forward(1);
                         </div>
                         <div class="widget-content referrer">
                             <!-- Widget content -->
+                            <div>
                             <table class="table table-bordered table-hover">
-                                <tbody>
+                                <tbody style="height: 140px; display: block; overflow-y: scroll;" class="widget-content referrer">
                                     <?php
 
                                         $query1=mysqli_query($con,"select * from combo_details natural join menu where combo_id='$id'")or die(mysqli_error($con));
@@ -136,15 +137,16 @@ javascript:window.history.forward(1);
                                                 $menu_price=$row1['menu_price'];
 
                                     ?>
-                                        <tr style="background-color: white;">
-                                            <td onClick="addMenu(this);" data-code="<?php echo $menu_id;?>" data-id="<?php echo $menu_name;?>" value="<?php echo $menu_price;?>">
+                                        <tr style="background-color: white; display: flex">
+                                            <td style="width: 100%; display: flex; justify-content: space-between;" onClick="addMenu(this);" data-code="<?php echo $menu_id;?>" data-id="<?php echo $menu_name;?>" value="<?php echo $menu_price;?>">
                                                 <span><?php echo $menu_name;?></span>
-                                                <span style="position: absolute; right: 30px;"><?php echo "P " . $menu_price;?></span>
+                                                <span><?php echo "P " . $menu_price;?></span>
                                             </td>
                                         </tr>
                                     <?php }?>
                                 </tbody>
                             </table>
+                            </div>
 
                             <div class="widget-foot text-center" id="radioButton">
 	                                <input type="radio" id="inlineCheckbox<?php echo $id;?>" value="<?php echo $id;?>" name="combo_id">
