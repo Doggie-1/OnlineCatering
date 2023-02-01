@@ -201,7 +201,7 @@ include('../includes/dbcon.php');
                   <div class="form-group">
                       <label class="control-label col-lg-4" for="username">Menu</label>
                       <div class="col-lg-8"> 
-                        <select class="form-control select2 " id="update" name="update" multiple onchange="changeFunc();" style="width: 100%;height:200px" placeholder="Select multiple members">
+                        <select class="form-control select2 " id="update" name="updated[]" multiple='multiple' onchange="changeFunc();" style="width: 100%;height:200px" placeholder="Select multiple members">
 					<?php
 						$choices = [];
 						$prices = [];
@@ -390,6 +390,7 @@ include('../includes/dbcon.php');
      const changeFunc = () => {
         var total = 0;
 		var selectBox = document.getElementById("update");
+		console.log(selectBox.value);
 		var menuPrices = document.getElementById("menuPrices").value.split(",");
 		var ids = document.getElementById("ids").value.split(",");
 		$(".select2").val().map((item) => {

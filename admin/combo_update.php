@@ -6,16 +6,12 @@ include('../includes/dbcon.php');
     $id = $_POST['id'];
     $name = $_POST['name'];
     $price = $_POST['price'];
-    $menu = array_key_exists("menu",$_POST) ? $_POST['menu'] : [];
+    $menu = array_key_exists("updated",$_POST) ? $_POST['updated'] : [];
 
-	if (!empty($menu)) {
-        mysqli_query($con,"delete from combo_details WHERE combo_id='$id' and menu_id NOT IN (".implode(',',$menu).")") or die(mysqli_error());
-    } else {
-        mysqli_query($con,"delete from combo_details WHERE combo_id='$id'") or die(mysqli_error());
-    }
+    mysqli_query($con,"delete from combo_details WHERE combo_id='$id'") or die(mysqli_error());
     mysqli_query($con,"UPDATE combo SET combo_name='$name', combo_price='$price' where combo_id='$id'") or die(mysqli_error($con));
 
-	if (empty($menu)) {
+	if (!empty($menu)) {
         foreach ($menu as $value)
         {
             $query=mysqli_query($con,"select * from combo_details where combo_id='$id' and menu_id='$value'")or die(mysqli_error($con));
@@ -29,6 +25,5 @@ include('../includes/dbcon.php');
 	}
 
     echo "<script>document.location='combo.php'</script>";
-	
 } 
 
