@@ -97,10 +97,10 @@ endif;
                   <table cellpadding="0" cellspacing="0" border="0" id="data-table" width="100%">
                     <thead>
                       <tr>
-                        <th>Full Name</th>
-                        <th>Username</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <th><b>Full Name</b></th>
+                        <th><b>Username</b></th>
+                        <th><b>Status</b></th>
+                        <th><b>Action</b></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -138,7 +138,7 @@ include('../includes/dbcon.php');
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
               <h4 class="modal-title">Update User Details</h4>
             </div>
-            <div class="modal-body" style="height:200px">
+            <div class="modal-body" style="height:200px; overflow:auto">
               <!--start form-->
               <form class="form-horizontal" method="post" action="user_update.php">
                   <!-- Title -->
@@ -193,14 +193,6 @@ include('../includes/dbcon.php');
 <!--end modal-->                      
 <?php }?>
                     </tbody>
-                    <tfoot>
-                      <tr>
-                        <th>Full Name</th>
-                        <th>Username</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                      </tr>
-                    </tfoot>
                   </table>
                   <div class="clearfix"></div>
                 </div>

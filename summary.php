@@ -42,8 +42,8 @@ endif;
 <body>
 	<?php include 'navbar.php';?>
 	<?php include 'menu-tab.php';?>
-	<div class="container"><br><br><br><br>
-		<div class = "content" style="height: 85vh;">
+	<div class="container"><br>
+		<div class = "content" style="height: 110vh;">
 			<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class = "col-md-12 col-lg-12">
 					<div class="widget wgreen">

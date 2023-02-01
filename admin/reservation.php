@@ -96,17 +96,17 @@ endif;
                   <table cellpadding="0" cellspacing="0" border="0" id="data-table" width="100%">
                     <thead>
                       <tr>
-                        <th>RCode</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Contact</th>
-                        <th>Event</th>
-                        <th>Date</th>
-                        <th>Venue</th>
+                        <th><b>RCode</b></th>
+                        <th><b>Last Name</b></th>
+                        <th><b>First Name</b></th>
+                        <th><b>Contact</b></th>
+                        <th><b>Event</b></th>
+                        <th><b>Date</b></th>
+                        <th><b>Venue</b></th>
                         <th></th>
-                        <th>Balance</th>
-                        <th>Mode of Payment</th>
-                        <th>Action</th>
+                        <th><b>Balance</b></th>
+                        <th><b>Mode of Payment</b></th>
+                        <th><b>Action</b></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -159,7 +159,7 @@ include('../includes/dbcon.php');
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
               <h4 class="modal-title">Add Payment</h4>
             </div>
-            <div class="modal-body" style="height:150px">
+            <div class="modal-body" style="height:150px; overflow:auto">
               <!--start form-->
               <form class="form-horizontal" method="post" action="payment_save.php" enctype='multipart/form-data'>
                   <!-- Title -->
@@ -208,7 +208,7 @@ include('../includes/dbcon.php');
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
               <h4 class="modal-title">Update Reservation Details</h4>
             </div>
-            <div class="modal-body" style="height:300px">
+            <div class="modal-body" style="height:300px; overflow:auto">
               <!--start form-->
               <form class="form-horizontal" method="post" action="reservation_update.php" enctype='multipart/form-data'>
                   <!-- Title -->

@@ -10,7 +10,7 @@ endif;
 	<?php include 'menu-tab.php';?>
 	
 		<div class = "container"><br><br><br><br><br><br><br><br>
-      <div class = "content" style="height: 65vh;">
+      <div class = "content" style="height: 80vh;">
 			<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class = "col-md-12 col-lg-12">
 					<div class="widget wgreen">
@@ -89,7 +89,7 @@ endif;
                                   <div class="col-lg-5">
                                     <select class="form-control select2 " id="exampleSelect1" name="mode" placeholder="Select occasion" required onchange="show();">
                                       <option value="Bank to Bank">Bank to Bank</option>
-                                      <option value="Pera Padala">Gcash</option>
+                                      <option value="Gcash">Gcash</option>
                                       <option value="Cash">Cash</option>
                                     </select>
                                   </div>
@@ -137,7 +137,7 @@ endif;
               document.getElementById('gcash').style.display = 'none';
               document.getElementById('visa').style.display = 'block';
               document.getElementById('cash').style.display = 'none';
-          } else if (value === "Pera Padala") {
+          } else if (value === "Gcash") {
               document.getElementById('gcash').style.display = 'block';
               document.getElementById('visa').style.display = 'none';
               document.getElementById('cash').style.display = 'none';

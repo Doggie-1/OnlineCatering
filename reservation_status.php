@@ -18,7 +18,7 @@ endif;
   <?php include 'navbar.php';?>
   <?php include 'menu-tab.php';?>
 
-  <div class="container"><br><br>
+  <div class="container"><br>
     <div class = "content">
         <div class = "col-md-12 col-lg-12">
           <div class="widget wgreen">
@@ -141,7 +141,7 @@ endif;
                 <span>No. of persons: <?php echo $row['pax'];?> * <?php echo $row['price'];?> = <?php echo $row['payable'];?></span>
                 <?php
 	                if ($cid) {
-	                    $query1 = mysqli_query($con,"select * from combo where combo_id='$cid'")or die(mysqli_error($con));
+	                    $query1 = mysqli_query($con,"select * from combo_details natural join menu where combo_id='$cid'")or die(mysqli_error($con));
 	                } else {
 	                    $query1 = mysqli_query($con, "SELECT * FROM custom_details natural join menu WHERE reservation_id='$id'");
 	                }
@@ -164,6 +164,7 @@ endif;
         
       </div>  
     </div>
+    <br><br><br><br>
 <?php include 'footer.php';?>   
 <?php include 'script.php';?>
 <script>
