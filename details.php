@@ -140,7 +140,7 @@ javascript:window.history.forward(1);
                                         <tr style="background-color: white; display: flex">
                                             <td style="width: 100%; display: flex; justify-content: space-between;" onClick="addMenu(this);" data-code="<?php echo $menu_id;?>" data-id="<?php echo $menu_name;?>" value="<?php echo $menu_price;?>">
                                                 <span><?php echo $menu_name;?></span>
-                                                <span><?php echo "P " . $menu_price;?></span>
+                                                <!--<span><?php echo "P " . $menu_price;?></span>   -->
                                             </td>
                                         </tr>
                                     <?php }?>
