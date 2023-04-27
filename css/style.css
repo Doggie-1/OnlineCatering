@@ -3,12 +3,16 @@
 /* Website : http://responsivewebinc.com
 ****************************/
 
+html {
+	height: 100%;
+}
 body{
 	font-size: 12px;
 	line-height: 22px;
 	color: #666;
 	border-top: 3px solid #eee;
-	background:#343434 url("../img/redwall.jpg");  
+	background:#343434 url("../img/redwall.jpg");
+	min-height: 100%; 
 	padding-top: 37px;
 	-webkit-font-smoothing: antialiased;
 }
