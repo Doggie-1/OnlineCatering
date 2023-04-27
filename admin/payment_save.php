@@ -58,7 +58,7 @@ $query = mysqli_query($con, "SELECT * FROM reservation natural join combo WHERE 
     
     $message = "Dear $first $last,
 
-    Your reservation is $status. $msg
+    Your reservation is $status. $msg 
 
 
     Thanks,
