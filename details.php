@@ -107,7 +107,7 @@ javascript:window.history.forward(1);
         <div class="col-lg-6">
             <?php
             include('includes/dbcon.php');
-                $query=mysqli_query($con,"select * from combo order by combo_name")or die(mysqli_error($con));
+                $query=mysqli_query($con,"select * from combo order by combo_price")or die(mysqli_error($con));
                 $count=mysqli_num_rows($query);
                 $ids = "";
                 while ($row=mysqli_fetch_array($query)){

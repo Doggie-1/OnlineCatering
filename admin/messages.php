@@ -113,7 +113,7 @@ include('../includes/dbcon.php');
         $fullname=$row['fullname'];
         $email=$row['email'];
         $subject=$row['subject'];
-		$message=$row['message'];
+		    $message=$row['message'];
         $date=$row['date'];
       
 
@@ -126,6 +126,10 @@ include('../includes/dbcon.php');
                         <td><?php echo date("F d, Y", strtotime($row['date'])); ?></td>
                         <td>
                             
+                              <a href="#myModal" class="btn btn-success" data-target="#view<?php echo $id;?>" data-toggle="modal">
+                                <i class="fa fa-eye"></i>
+                              </a>
+
                               <a href="#myModal" class="btn btn-danger" data-target="#update<?php echo $id;?>" data-toggle="modal">
                                 <i class="fa fa-times"></i>
                               </a>
@@ -134,6 +138,37 @@ include('../includes/dbcon.php');
                         </td>
                       </tr>
 <!-- Modal -->
+<div id="view<?php echo $id;?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title"><?php echo $fullname;?></h4>
+            </div>
+            <div class="modal-body" style="height:140px">
+              <!--start form-->
+              <div class="form-group">
+                <label>Message</label>
+                  <textarea class="form-control" placeholder="<?php echo $message;?>" readonly></textarea>                                      
+              </div>
+             
+              
+                  <!-- Buttons -->
+                  <div class="form-group">
+                      <!-- Buttons -->
+                        <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+                      
+                  </div>
+              </form>
+              <!--end form-->
+            </div>
+           
+        </div><!--modal content-->
+    </div><!--modal dialog-->
+</div>
+
+<!--end modal-->    
+
 <div id="update<?php echo $id;?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
