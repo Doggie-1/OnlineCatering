@@ -5,12 +5,12 @@ endif;
 ?>
 <?php include 'header.php';?>
 
-<body>
+<body style="height: 100vh;">
 	<?php include 'navbar.php';?>
 	<?php include 'menu-tab.php';?>
 	
-		<div class = "container"><br><br><br><br><br><br><br><br>
-      <div class = "content" style="height: 80vh;">
+		<div class = "container"><br><br>
+      <div class = "content">
 			<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class = "col-md-12 col-lg-12">
 					<div class="widget wgreen">
@@ -110,7 +110,7 @@ endif;
                               </form>
                   </div>
                 </div>
-          </div>
+          </div><br>
                   <div class="widget-foot">
                     <!-- Footer goes here -->
                   </div>

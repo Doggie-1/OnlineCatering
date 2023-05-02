@@ -1,11 +1,11 @@
 <?php include 'header.php';?>
 
-<body>
+<body style="height: 100vh">
 	<?php include 'navbar.php';?>
 	<?php include 'menu-tab.php';?>
 	
-      <div class="container"><br>
-		    <div class ="content" style="height: 75vh">
+      <div class="container"><br><br>
+		    <div class ="content">
 					<div class="widget wgreen">
                 
               <div class="widget-head">
@@ -79,7 +79,7 @@
           </div><br>
         </div>		
 		  </div>
-      <br><br>
+      <br>
 
 <?php include 'footer.php';?> 	
 <?php include 'script.php';?>

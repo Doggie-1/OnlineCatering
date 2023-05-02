@@ -155,7 +155,7 @@ javascript:window.history.forward(1);
                             </div>
 
                             <div class="widget-foot text-center" id="radioButton">
-	                                <input type="radio" id="inlineCheckbox<?php echo $id;?>" value="<?php echo $id;?>" name="combo_id">
+	                                <input type="checkbox" id="inlineCheckbox<?php echo $id;?>" value="<?php echo $id;?>" name="combo_id">
                             </div>
                         </div>
                     </div>
