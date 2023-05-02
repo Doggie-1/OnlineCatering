@@ -58,9 +58,8 @@ endif;
     <div class="widget wgreen" style="margin: 0px; border: 0">
         <div class="widget-head">
             <div class="pull-left title">Reservation Summary</div>
-            <div class="widget-icons pull-right">
+                <div class="widget-icons pull-right">
                 <button class="btn btn-primary hideme" onClick="window.print()"><i class="fa fa-print"></i></button>
-                <a href="finish.php" class="btn btn-danger hideme"><i class="fa fa-sign-out"></i></a>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -156,7 +155,7 @@ endif;
         <div class="grid-item">
             <?php
                 if ($cid) {
-                    $query1 = mysqli_query($con,"select * from combo_details natural join menu where combo_id='$cid'")or die(mysqli_error($con));
+                    $query1 = mysqli_query($con,"SELECT * FROM combo_details natural join menu WHERE combo_id='$cid'")or die(mysqli_error($con));
                 } else {
                     $query1 = mysqli_query($con, "SELECT * FROM custom_details natural join menu WHERE reservation_id='$id'");
                 }

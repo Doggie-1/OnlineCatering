@@ -4,7 +4,7 @@
 	<?php include 'navbar.php';?>
 	<?php include 'menu-tab.php';?>
 	
-      <div class="container"><br><br>
+      <div class="container"><br>
 		    <div class ="content" style="height: 75vh">
 					<div class="widget wgreen">
                 
@@ -75,7 +75,7 @@
                   
                 </div>
                   </div>
-                  
+
           </div><br>
         </div>		
 		  </div>
