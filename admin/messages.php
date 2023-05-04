@@ -14,6 +14,27 @@ endif;
   
 </head>
 
+<!-- Modal -->
+<div class="modal fade" id="view_user" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p  id="msg"><?php echo $message;?></p>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" id="closemodal" data-bs-dismiss="modal">Close</button> -->
+          <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!--end modal-->  
+
 <body>
 
 <div class="navbar navbar-fixed-top bs-docs-nav" role="banner">
@@ -30,7 +51,6 @@ endif;
       
       <?php include('../includes/topbar.php');?>
     
-
     </div>
   </div>
 
@@ -80,8 +100,8 @@ endif;
                     
                   </div>
                   <div class="widget-icons pull-right">
-                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a> 
-                    <a href="#" class="wclose"><i class="fa fa-times"></i></a>
+                    <!-- <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a> 
+                    <a href="#" class="wclose"><i class="fa fa-times"></i></a> -->
                   </div>  
                   <div class="clearfix"></div>
                 </div>
@@ -98,7 +118,7 @@ endif;
                         <th>Full Name</th>
                         <th>Contact</th>
                         <th>Subject</th>
-                        <th>Message</th>
+                        <!-- <th>Message</th> -->
                         <th>Date Sent</th>
                         <th>Action</th>
                       </tr>
@@ -113,7 +133,7 @@ include('../includes/dbcon.php');
         $fullname=$row['fullname'];
         $email=$row['email'];
         $subject=$row['subject'];
-		    $message=$row['message'];
+		    $message=$row['message']; 
         $date=$row['date'];
       
 
@@ -122,53 +142,20 @@ include('../includes/dbcon.php');
                         <td><?php echo $fullname;?></td>
                         <td><?php echo $email;?></td>
                         <td><?php echo $subject;?></td>
-                        <td><?php echo $message;?></td>
+                        <!-- <td><?php echo $message;?></td> -->
                         <td><?php echo date("F d, Y", strtotime($row['date'])); ?></td>
                         <td>
                             
-                              <a href="#myModal" class="btn btn-success" data-target="#view<?php echo $id;?>" data-toggle="modal">
-                                <i class="fa fa-eye"></i>
-                              </a>
-
                               <a href="#myModal" class="btn btn-danger" data-target="#update<?php echo $id;?>" data-toggle="modal">
                                 <i class="fa fa-times"></i>
                               </a>
-                            
+                             <a href="#myModal" class="btn btn-success" data-target="#view<?php echo $id;?>" data-toggle="modal" onclick='viewData("<?php echo $id;?>","<?php echo $message;?>","<?php echo $fullname;?>");'>
+                                <i class="fa fa-search"></i>
+                              </a>
                             
                         </td>
                       </tr>
 <!-- Modal -->
-<div id="view<?php echo $id;?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h4 class="modal-title"><?php echo $fullname;?></h4>
-            </div>
-            <div class="modal-body" style="height:140px">
-              <!--start form-->
-              <div class="form-group">
-                <label>Message</label>
-                  <textarea class="form-control" placeholder="<?php echo $message;?>" readonly></textarea>                                      
-              </div>
-             
-              
-                  <!-- Buttons -->
-                  <div class="form-group">
-                      <!-- Buttons -->
-                        <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
-                      
-                  </div>
-              </form>
-              <!--end form-->
-            </div>
-           
-        </div><!--modal content-->
-    </div><!--modal dialog-->
-</div>
-
-<!--end modal-->    
-
 <div id="update<?php echo $id;?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -183,6 +170,7 @@ include('../includes/dbcon.php');
                   <div class="alert alert-danger">
                       Are you sure you want to delete this message from <?php echo $fullname;?>?
                     </div>                     
+                      
                   <!-- Buttons -->
                   <div class="form-group">
                       <!-- Buttons -->
@@ -198,7 +186,49 @@ include('../includes/dbcon.php');
         </div><!--modal content-->
     </div><!--modal dialog-->
 </div>
-<!--end modal-->                      
+<!--end modal-->   
+                                                                             
+<!-- Modal -->
+<div id="" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title"><?php echo $fullname;?></h4>
+            </div>
+            <div class="modal-body" style="height:300px" >
+              <!--start form-->
+              <form class="form-horizontal" method="post">
+                  <input type="hidden" class="form-control" name="id" value="<?php echo $id;?>">
+                  <div class="alert alert-danger"  style="position:relative; overflow:auto !important; ">
+                  <?php echo $message ;?>
+                    </div>    
+                      
+
+                       <!-- <div class="form group">
+                      <label>Message</label>
+                      <textarea class="form-control" placeholder="<?php echo $message;?>"readonly></textarea>
+                    </div>          -->
+                  <!-- Buttons -->
+                  <div class="form-group">
+                      <!-- Buttons -->
+                      
+                        <button type="submit" class="btn btn-sm btn-primary" name="del">Delete</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+                      
+                  </div>
+              </form>
+              <!--end form-->
+            </div>
+            <div class="modal-footer">
+          </div>
+           
+        </div><!--modal content-->
+    </div><!--modal dialog-->
+</div>
+
+
+ 
 <?php }?>
                     </tbody>
                     <tfoot>
@@ -257,3 +287,12 @@ include('../includes/dbcon.php');
 
 </body>
 </html>
+<script>
+  function viewData(id, message, fullname){
+    $('#view_user').modal('show');
+    $('#staticBackdropLabel').html(fullname);
+    $('#msg').text(message);
+  }
+
+
+</script>
