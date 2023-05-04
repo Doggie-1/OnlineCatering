@@ -17,7 +17,7 @@ include('../includes/dbcon.php');
 		mysqli_query($con,"UPDATE reservation SET balance=balance-'$amount',r_status='$status' where rid='$id'")or die(mysqli_error($con)); 
 
 $query = mysqli_query($con, "SELECT * FROM reservation natural join combo WHERE rid='$id'");
-      $row=mysqli_fetch_array($query);
+        $row=mysqli_fetch_array($query);
         $rcode=$row['r_code'];
         $first=$row['r_first'];
         $last=$row['r_last'];
@@ -32,7 +32,7 @@ $query = mysqli_query($con, "SELECT * FROM reservation natural join combo WHERE 
         $status=$row['r_status'];
         $email=$row['r_email'];
         $motif=$row['r_motif'];
-        $time=$row['r_time'];
+        //$time=$row['r_time'];
         $time=$row['r_time'];
         $type=$row['r_type'];
         $cid=$row['combo_id'];
@@ -63,13 +63,13 @@ $query = mysqli_query($con, "SELECT * FROM reservation natural join combo WHERE 
 
     Thanks,
 
-    Chimney's Catering Services
+    Kirby's Magic Kan-anan Catering Services
     	
     ";
     
     $headers = "From:" . $from;
     
-    mail($to,$subject,$message, $headers);
+    //mail($to,$subject,$message, $headers);
 
 	echo "<script>document.location='pending.php'</script>";
 	
