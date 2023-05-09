@@ -176,7 +176,7 @@ include('../includes/dbcon.php');
                       <label class="control-label col-lg-4" for="title">Status</label>
                       <div class="col-lg-8"> 
                         <select class="form-control select2" id="exampleSelect1" name="status">
-                                <option>Approved</option>
+                                <option>Confirmed</option>
                                 <option>Finished</option>
                                 <option>Cancelled</option>
                         </select>

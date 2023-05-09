@@ -37,14 +37,7 @@ $query = mysqli_query($con, "SELECT * FROM reservation natural join combo WHERE 
         $type=$row['r_type'];
         $cid=$row['combo_id'];
         $combo=$row['combo_name'];
-        $msg = "Thank you!";
-        if ($status=='Approved'){
-        	$msg="Please pay your remaining balance $balance, before the event. Thank you!";
-        }
-        if ($status=='Cancelled'){
-        	$msg=" Sorry!";
-        }
-
+        
 
 	ini_set( 'display_errors', 1 );
     
@@ -58,7 +51,7 @@ $query = mysqli_query($con, "SELECT * FROM reservation natural join combo WHERE 
     
     $message = "Dear $first $last,
 
-    Your reservation is $status. $msg 
+    Your reservation is $status.
 
 
     Thanks,

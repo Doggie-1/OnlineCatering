@@ -65,7 +65,7 @@ endif;
         </div>
     </div>
     <div class="alert alert-success">
-        <b>Reminder: Please print your reservation summary and take note of your reservation code for reservation inquiry.</b>
+        <b>Reminder: Please print your reservation summary and take note of your reservation code for reservation inquiry. </b>
     </div>
         <h3 style="text-align:center">Kirby's Magic Kan-anan Catering Services</h3>
         <h4 style="text-align:center">Pabayo Chaves St., Cagayan de Oro, Philippines</h4>

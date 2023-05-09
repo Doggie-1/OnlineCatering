@@ -9,7 +9,7 @@ endif;
 	<?php include 'navbar.php';?>
 	<?php include 'menu-tab.php';?>
 	
-		<div class = "container"><br><br>
+		<div class = "container"><br><br><br><br><br>
       <div class = "content">
 			<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class = "col-md-12 col-lg-12">
@@ -119,7 +119,7 @@ endif;
 				
 				
 			</div>	
-		</div>
+		</div><br><br><br><br><br>
 <?php include 'footer.php';?> 	
 <?php include 'script.php';?>
 <script>

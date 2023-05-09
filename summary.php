@@ -39,11 +39,11 @@ endif;
       color: white;
     }
 </style>
-<body>
+<body style="height: 100vh;">
 	<?php include 'navbar.php';?>
 	<?php include 'menu-tab.php';?>
 	<div class="container"><br>
-		<div class = "content" style="height: 110vh;">
+		<div class = "content">
 			<div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class = "col-md-12 col-lg-12">
 					<div class="widget wgreen">
@@ -192,7 +192,7 @@ endif;
       </div>
 				
 			</div>	
-		</div>
+		</div><br>
         
 <?php include 'footer.php';?> 	
 <?php include 'script.php';?>
