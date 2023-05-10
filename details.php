@@ -97,7 +97,7 @@ javascript:window.history.forward(1);
                 <div class="form-group">
                     <label class="col-lg-1 control-label"></label>
                     <div class="col-lg-9">
-                      <b style="color:green">Reminder: For the custom, simply click the food item listed within the package to display it with its price in the Custom Package.</b>
+                      <h4><b style="color:green">Reminder: For the custom, simply click the food item listed within the package to display it with its price in the Custom Package.</b></h4 >
                     </div>
                 </div>
                     
@@ -155,7 +155,7 @@ javascript:window.history.forward(1);
                             </div>
 
                             <div class="widget-foot text-center" id="radioButton">
-	                                <input type="checkbox" id="inlineCheckbox<?php echo $id;?>" value="<?php echo $id;?>" name="combo_id">
+	                                <input type="radio" id="inlineCheckbox<?php echo $id;?>" value="<?php echo $id;?>" name="combo_id">
                             </div>
                         </div>
                     </div>

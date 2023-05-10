@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <!-- Logo section -->
-        <div class="col-md-8">
+        <div class="col-md-7">
           <!-- Logo. -->
           <div class="logo">
            <a href="index.php"> <h2 class = "logo-text"><span class="bold">Kirby's Magic Kan-anan Catering Services</span></h2></a>	
@@ -12,7 +12,7 @@
           <!-- Logo ends -->
         </div>
         <!-- Button section -->
-        <div class="col-md-4">
+        <div class="col-md-5">
           <!-- Buttons -->  
           <ul class="nav nav-tabs">
             <!-- Comment button with number of latest comments count -->          

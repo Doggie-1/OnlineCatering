@@ -18,21 +18,22 @@
 		  </div>
     </div><br><br>
 
-				
+  <div style="width: 1000px; height:5px; margin: auto;">
 	  <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		  <div class = "col-lg-12">
 				<h1 class = "page-title center" style= "padding-top:50px; color:black;">Kirby's Catering Statement</h1>
-					<p class = "body-text" style="color:black">The Catering Services offers great satisfaction and awesome experience not only in food but in all of their services that guarantee the customers needs. 
+					<p class = "body-text" style="color:black; text-align: justify;">The Catering Services offers great satisfaction and awesome experience not only in food but in all of their services that guarantee the customers needs. 
 					Through the great effort of their kitchen personnel and their catering crews they are successfully giving the services and a high quality value of foods that suites to all occasions and theme.
 					</p>
 					<br/>
-					<p class = "body-text" style="color:black">
+					<p class = "body-text" style="color:black; text-align: justify;">
 					Wanting to give their clients service and a catering experience like no other, Kirby's Magic Kan-anan Catering has always strived to provide something new to their patrons. This is evident in the constantly expanding menus and packages that they offer.
           Kirby's Magic Kan-anan Catering believes that we have to continuously learn new approaches in providing for the needs
 					</p>
 	        <br><br><br>
-			</div>
-	  </div>
+      </div>
+		</div>
+	</div>
 </div>
 		
 		

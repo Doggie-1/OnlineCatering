@@ -38,7 +38,7 @@
                              <div class="support-contact">
                                 <!-- Phone, email and address with font awesome icon -->
                                 
-                                <p><i class="fa fa-phone"></i>&nbsp; Phone No.<strong>:</strong> 09561275037</p>
+                                <p style="font-style: garamond;"><i class="fa fa-phone"></i>&nbsp; Phone No.<strong>:</strong> 09561275037</p>
                                 <hr />
                                 <p><i class="fa fa-envelope"></i>&nbsp; Email<strong>:</strong> kirbybrik23@gmail.com</p>
                                 <hr />
