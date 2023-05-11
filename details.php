@@ -20,10 +20,6 @@ javascript:window.history.forward(1);
                 
                 <div class="widget-head">
                   <div class="pull-left">Reservation Details</div>
-                  <div class="widget-icons pull-right">
-                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a> 
-                    <a href="#" class="wclose"><i class="fa fa-times"></i></a>
-                  </div>
                   <div class="clearfix"></div>
                 </div>
 
@@ -113,7 +109,7 @@ javascript:window.history.forward(1);
                 while ($row=mysqli_fetch_array($query)){
                     $id=$row['combo_id'];
                     $name=$row['combo_name'];
-                    $price=$row['combo_price'];
+                    $price=$row['combo_price']; 
                     if ($ids) {
                         $ids = $ids . "," . $row['combo_id'];
                     } else {
@@ -132,7 +128,7 @@ javascript:window.history.forward(1);
                             <!-- Widget content -->
                             <div>
                             <table class="table table-bordered table-hover">
-                                <tbody style="height: 140px; display: block; overflow-y: scroll;" class="widget-content referrer">
+                                <tbody style="height: 140px; display: block; overflow: auto;" class="widget-content referrer">
                                     <?php
 
                                         $query1=mysqli_query($con,"select * from combo_details natural join menu where combo_id='$id'")or die(mysqli_error($con));

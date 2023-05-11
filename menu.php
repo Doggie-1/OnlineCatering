@@ -2,7 +2,7 @@
 <html lang="en">
 <?php include 'header.php';?>
 
-<body>
+<body style="height: 100vh;">
 
 <?php include 'navbar.php';?>
 <?php include 'menu-tab.php';?>
@@ -14,16 +14,12 @@
 	    <!-- Matter -->
 
 	    <div class="matter">
-        <div class="container" style="height: 80vh;"><br>
+        <div class="container"><br>
           <div class="row">
             <div class="col-md-8">
               <div class="widget">
                 <div class="widget-head">
                   <div class="pull-left">Menu</div>
-                  <div class="widget-icons pull-right">
-                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
-                    <a href="#" class="wclose"><i class="fa fa-times"></i></a>
-                  </div>
                   <div class="clearfix"></div>
                 </div>
 <?php
@@ -135,7 +131,7 @@
    <div class="clearfix"></div>
 
 </div>
-<br><br><br><br>
+<br>
 <!-- Content ends -->
 
 <?php include 'footer.php';?>
