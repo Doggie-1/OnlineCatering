@@ -12,7 +12,7 @@
 		}
 		else
 		{
-			echo "<script type='text/javascript'>alert('No reservation found!');</script>";
+			
 			echo "<script>document.location='index.php'</script>";  
 		}	
 ?>   
